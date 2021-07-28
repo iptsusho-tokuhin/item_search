@@ -68,11 +68,11 @@ window.onload = function() {
 
 function Set_Initial()
 {
-	if(document.getElementById("In_Out").innerHTML == "input")//inputとoutputとで初期表示を切り替え
+	if(document.getElementById("In_Out").innerHTML == "output")//inputとoutputとで初期表示を切り替え
 	{	
 		for(var i = 0; i <= max; i++)
 		{
-			balloon_flag[i] = 2;
+			balloon_flag[i] = 1;
 		}
 		//document.getElementById("interface").style.display = "block";
 	}
@@ -80,7 +80,7 @@ function Set_Initial()
 	{
 		for(var i = 0; i <= max; i++)
 		{
-			balloon_flag[i] = 1;
+			balloon_flag[i] = 2;
 		}
 	}
 
