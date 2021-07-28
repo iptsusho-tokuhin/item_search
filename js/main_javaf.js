@@ -68,7 +68,7 @@ window.onload = function() {
 
 function Set_Initial()
 {
-	if(document.getElementById("In_Out").innerHTML == "output")//inputとoutputとで初期表示を切り替え
+	if(document.getElementById("In_Out").value == "output")//inputとoutputとで初期表示を切り替え
 	{	
 		for(var i = 0; i <= max; i++)
 		{
