@@ -1,4 +1,4 @@
-﻿function output_to_gas()
+﻿function Output_to_gas()
 {
 	document.getElementById('startes').innerHTML = "保存中";
 	let text = "";
@@ -51,7 +51,7 @@ function showStartes(returnString)
 	document.getElementById('startes').innerHTML = returnString;
 }
    
-function intput_from_gas()
+function Intput_from_gas()
 {
 	document.getElementById('startes').innerHTML = "読込中";
 	google.script.run.withSuccessHandler(output_to_html).read_ss();
