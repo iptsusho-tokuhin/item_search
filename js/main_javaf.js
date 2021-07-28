@@ -63,35 +63,24 @@ window.onload = function() {
 	ButtonTypeChange();
 	Reach_Rate();
 	Set_Initial();
-	
-	var data_flag = location.search.substr(-1);
-	if(data_flag == 7)
-	{
-		document.getElementById("In_Out").value = "intput"
-		document.getElementById("interface").style.display = "block";
-		
-	}
-	else
-	{
-		document.getElementById("In_Out").value = "outtput"
-	}
 }
 
 
 function Set_Initial()
 {
-	if(document.getElementById("In_Out").value == "output")//inputとoutputとで初期表示を切り替え
+	if(document.getElementById("In_Out").innerHTML == "input")//inputとoutputとで初期表示を切り替え
 	{	
 		for(var i = 0; i <= max; i++)
 		{
-			balloon_flag[i] = 1;
+			balloon_flag[i] = 2;
 		}
+		document.getElementById("interface").style.display = "block";
 	}
 	else
 	{
 		for(var i = 0; i <= max; i++)
 		{
-			balloon_flag[i] = 2;
+			balloon_flag[i] = 1;
 		}
 	}
 
