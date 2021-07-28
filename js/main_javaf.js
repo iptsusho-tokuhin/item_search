@@ -59,7 +59,7 @@ window.onload = function() {
 	DrowRouteLine_ASEAN();
 	DrowRouteLine_TW();
 	DrowRouteLine_Air();
-	//intput_from_gas();
+	Intput_from_gas();
 	ButtonTypeChange();
 	Reach_Rate();
 	Set_Initial();
@@ -141,7 +141,7 @@ function Text_Load()
 			elm[i].style.background = document.forms[start + i].elements[BACK_COLOR].value;
 		}
 	}
-	output_to_gas();
+	Output_to_gas();
 }
 
 //地図上の線データ初期設定*******************************************************************************************************
