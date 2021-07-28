@@ -63,6 +63,18 @@ window.onload = function() {
 	ButtonTypeChange();
 	Reach_Rate();
 	Set_Initial();
+	
+	var data_flag = location.search.substr(-1);
+	if(data_flag == 7)
+	{
+		document.getElementById("In_Out").value = "intput"
+		document.getElementById("interface").style.display = "block";
+		
+	}
+	else
+	{
+		document.getElementById("In_Out").value = "outtput"
+	}
 }
 
 
