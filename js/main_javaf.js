@@ -74,7 +74,7 @@ function Set_Initial()
 		{
 			balloon_flag[i] = 1;
 		}
-		//document.getElementById("interface").style.display = "block";
+		document.getElementById("interface").style.display = "block";
 	}
 	else
 	{
@@ -82,6 +82,7 @@ function Set_Initial()
 		{
 			balloon_flag[i] = 2;
 		}
+		document.getElementById("interface").style.display = "block";
 	}
 
 	var today = new Date();
