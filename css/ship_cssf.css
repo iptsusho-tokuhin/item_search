@@ -6,10 +6,15 @@
 	visibility: hidden;
 }
 
-.save{
+.startes {
 	position: absolute;
 	left: 1010px;
 	top: 330px;
+}
+.save {
+	position: absolute;
+	left: 1010px;
+	top: 370px;
 	width:100px;
 	padding:10px;
 	font-size:20px;
