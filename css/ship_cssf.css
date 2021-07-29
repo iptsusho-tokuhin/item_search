@@ -8,9 +8,11 @@
 
 .startes {
 	position: absolute;
+	display: block;
 	left: 1010px;
 	top: 330px;
 }
+
 .save {
 	position: absolute;
 	left: 1010px;
