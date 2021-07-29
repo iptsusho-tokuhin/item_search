@@ -97,6 +97,9 @@ function output_to_html(text)
 
 	document.getElementById('index').textContent = arr_text[max + 11];
 	document.getElementById('startes').innerHTML = "読込完了";
+	ButtonTypeChange();
+	Reach_Rate();
+	Set_Initial();
 	Get_URL();
 }
 
