@@ -60,9 +60,6 @@ window.onload = function() {
 	DrowRouteLine_TW();
 	DrowRouteLine_Air();
 	Intput_from_gas();
-	ButtonTypeChange();
-	Reach_Rate();
-	Set_Initial();
 }
 
 
