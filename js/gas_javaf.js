@@ -1,4 +1,4 @@
-﻿function Output_to_gas()
+function Output_to_gas()
 {
 	document.getElementById('startes').innerHTML = "保存中";
 	let text = "";
@@ -97,7 +97,15 @@ function output_to_html(text)
 
 	document.getElementById('index').textContent = arr_text[max + 11];
 	document.getElementById('startes').innerHTML = "読込完了";
-	ButtonTypeChange();
-	Reach_Rate();
-	Set_Initial();
-    }
+	Get_URL();
+}
+
+function Get_URL()
+{
+	google.script.run.withSuccessHandler(Get_IO).getGasUrl();
+}
+
+function Get_IO(IO)
+{
+	document.getElementById('I_O').value = IO;
+}
