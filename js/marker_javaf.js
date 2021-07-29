@@ -33,7 +33,7 @@
 		create_info(i);
 		google.maps.event.addListener( markers[i], "dragend", function(ev){document.forms[i].elements[LAT].value = ev.latLng.lat();document.forms[i].elements[LNG].value = ev.latLng.lng();Marker_Reload(i,0);});
 	}
-	Output_to_gas();
+	//Output_to_gas();
 }
 
 var infoWindow = [];
