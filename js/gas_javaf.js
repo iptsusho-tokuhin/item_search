@@ -41,8 +41,15 @@ function Output_to_gas()
         }
         text = text + '***';
 	}
+	
+	var today = new Date();
+	today.setDate(today.getDate());
+	var yyyy = today.getFullYear();
+	var mm = ("0"+(today.getMonth()+1)).slice(-2);
+	var dd = ("0"+today.getDate()).slice(-2);
+ 	var date = yyyy + "年" + mm + "月" + dd + "日";
 		
-	text = text + document.getElementById('index').textContent;
+	text = text + "　発注済・船便未確定案件　更新日" + date;
 	google.script.run.withSuccessHandler(showStartes).write_ss(text);
 }
 
