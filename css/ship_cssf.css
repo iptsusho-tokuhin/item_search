@@ -6,6 +6,15 @@
 	visibility: hidden;
 }
 
+.save{
+	position: absolute;
+	left: 1010px;
+	top: 330px;
+	width:100px;
+	padding:10px;
+	font-size:20px;
+}
+
 .new {
 	position: absolute;
 	left: 1010px;
