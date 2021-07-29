@@ -143,7 +143,7 @@ function Text_Load()
 			elm[i].style.background = document.forms[start + i].elements[BACK_COLOR].value;
 		}
 	}
-	Output_to_gas();
+	//Output_to_gas();
 }
 
 //地図上の線データ初期設定*******************************************************************************************************
