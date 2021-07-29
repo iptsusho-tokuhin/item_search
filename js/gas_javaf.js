@@ -100,15 +100,4 @@ function output_to_html(text)
 	ButtonTypeChange();
 	Reach_Rate();
 	Set_Initial();
-	Get_URL();
-}
-
-function Get_URL()
-{
-	google.script.run.withSuccessHandler(Get_IO).getGasUrl();
-}
-
-function Get_IO(IO)
-{
-	document.getElementById('I_O').value = IO;
 }
