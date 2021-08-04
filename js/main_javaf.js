@@ -5,13 +5,13 @@ let infos = [];
 var infoWindows = [];
 var balloon_flag = [];
 var icon = [
-"img/HERO.png",
-"img//SHIP1_L.png",
-"img//SHIP1_R.png",
-"img//SHIP2_L.png",
-"img//SHIP2_R.png",
-"img//AIRPLANE_L.png",
-"img//AIRPLANE_R.png"
+"https://iptsusho-tokuhin.github.io/Ship_Location/img/HERO.png",
+"https://iptsusho-tokuhin.github.io/Ship_Location/img//SHIP1_L.png",
+"https://iptsusho-tokuhin.github.io/Ship_Location/img//SHIP1_R.png",
+"https://iptsusho-tokuhin.github.io/Ship_Location/img//SHIP2_L.png",
+"https://iptsusho-tokuhin.github.io/Ship_Location/img//SHIP2_R.png",
+"https://iptsusho-tokuhin.github.io/Ship_Location/img//AIRPLANE_L.png",
+"https://iptsusho-tokuhin.github.io/Ship_Location/img//AIRPLANE_R.png"
 ];
 
 var max = 15;
