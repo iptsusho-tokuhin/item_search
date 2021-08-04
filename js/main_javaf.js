@@ -6,12 +6,12 @@ var infoWindows = [];
 var balloon_flag = [];
 var icon = [
 "https://github.com/iptsusho-tokuhin/Ship_Location/blob/main/img/HERO.png",
-"https://github.com/iptsusho-tokuhin/Ship_Location/blob/main/img//SHIP1_L.png",
-"https://github.com/iptsusho-tokuhin/Ship_Location/blob/main/img//SHIP1_R.png",
-"https://github.com/iptsusho-tokuhin/Ship_Location/blob/main/img//SHIP2_L.png",
-"https://github.com/iptsusho-tokuhin/Ship_Location/blob/main/img//SHIP2_R.png",
-"https://github.com/iptsusho-tokuhin/Ship_Location/blob/main/img//AIRPLANE_L.png",
-"https://github.com/iptsusho-tokuhin/Ship_Location/blob/main/img//AIRPLANE_R.png"
+"https://github.com/iptsusho-tokuhin/Ship_Location/blob/main/img/SHIP1_L.png",
+"https://github.com/iptsusho-tokuhin/Ship_Location/blob/main/img/SHIP1_R.png",
+"https://github.com/iptsusho-tokuhin/Ship_Location/blob/main/img/SHIP2_L.png",
+"https://github.com/iptsusho-tokuhin/Ship_Location/blob/main/img/SHIP2_R.png",
+"https://github.com/iptsusho-tokuhin/Ship_Location/blob/main/img/AIRPLANE_L.png",
+"https://github.com/iptsusho-tokuhin/Ship_Location/blob/main/img/AIRPLANE_R.png"
 ];
 
 var max = 15;
