@@ -16,6 +16,11 @@ function Output_to_gas()
 			{
 				data = "##" + document.forms[i].elements[j].value;
 			}
+			else if(j == DATE_DEP)
+			{
+				data = document.forms[i].elements[j].value;
+				alert(data);
+			}
 			else
 			{
 				data = document.forms[i].elements[j].value;
