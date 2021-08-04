@@ -4,15 +4,16 @@ var markers = [];
 let infos = [];
 var infoWindows = [];
 var balloon_flag = [];
-var url = "https://raw.githubusercontent.com/iptsusho-tokuhin/Ship_Location/main/img/"
+//https://github.com/iptsusho-tokuhin/Ship_Location/blob/main/img/SHIP1_L.png?raw=true
+var url = "https://github.com/iptsusho-tokuhin/Ship_Location/blob/main/img/"
 var icon = [	
-url + "HERO.png",
-url + "SHIP1_L.png",
-url + "SHIP1_R.png",
-url + "SHIP2_L.png",
-url + "SHIP2_R.png",
-url + "AIRPLANE_L.png",
-url + "AIRPLANE_R.png"
+url + "HERO.png?raw=true",
+url + "SHIP1_L.png?raw=true",
+url + "SHIP1_R.png?raw=true",
+url + "SHIP2_L.png?raw=true",
+url + "SHIP2_R.png?raw=true",
+url + "AIRPLANE_L.png?raw=true",
+url + "AIRPLANE_R.png?raw=true"
 ];
 
 var max = 15;
