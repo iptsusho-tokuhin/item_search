@@ -12,15 +12,10 @@ function Output_to_gas()
 			{
 				if(document.forms[i].elements[j].checked == true){data = 1;}else{data = "";}
 			}
-			else if(j == IVNO)
+			else if(j == IVNO||j == DATE_DEP||j == DATE_ARR)
 			{
 				data = "##" + document.forms[i].elements[j].value;
 			}
-			//else if(j == DATE_DEP)
-			//{
-			//	data = document.forms[i].elements[j].value;
-			//	alert(data);
-			//}
 			else
 			{
 				data = document.forms[i].elements[j].value;
