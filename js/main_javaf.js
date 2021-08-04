@@ -5,13 +5,13 @@ let infos = [];
 var infoWindows = [];
 var balloon_flag = [];
 var icon = [
-"https://dl.dropboxusercontent.com/s/xpwxwyy9ss3nw5v/HERO.png",
-"https://dl.dropboxusercontent.com/s/lxs389sdxz1q9y4/SHIP1_L.png",
-"https://dl.dropboxusercontent.com/s/g28hwt90y7wjye8/SHIP1_R.png",
-"https://dl.dropboxusercontent.com/s/g0xeamftqunhydh/SHIP2_L.png",
-"https://dl.dropboxusercontent.com/s/a9q9va1k3n8bl52/SHIP2_R.png",
-"https://dl.dropboxusercontent.com/s/bq9ipykk8xy57kk/AIRPLANE_L.png",
-"https://dl.dropboxusercontent.com/s/y9xf9altom90xf9/AIRPLANE_R.png"
+"img/HERO.png",
+"img//SHIP1_L.png",
+"img//SHIP1_R.png",
+"img//SHIP2_L.png",
+"img//SHIP2_R.png",
+"img//AIRPLANE_L.png",
+"img//AIRPLANE_R.png"
 ];
 
 var max = 15;
