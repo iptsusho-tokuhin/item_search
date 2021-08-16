@@ -3,6 +3,15 @@ button {
 	padding:0px;
 }
 
+.title {
+	position: absolute;
+	display: block;
+	background-color: #FFFFFF;
+	padding: 10px;
+	left: 10px;
+	top: 10px;
+}
+
 .interface {
 	margin:0px;
 	padding:0px;
