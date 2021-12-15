@@ -66,8 +66,8 @@ function Table_Reload()//表にデータを追加
 			cell3 = row.insertCell(2); 
 			cell4 = row.insertCell(3); 
 
-			//if(document.forms[i].elements[IVNO].value != "" || document.forms[i].elements[IV1].value != "")
-			//{
+			if(document.forms[i].elements[IVNO].value != "" || document.forms[i].elements[IV1].value != "")
+			{
 				if(document.forms[i].elements[IV1].value != "")
 				{
 					text2 = "<a href = " + document.forms[i].elements[IV1].value + " target=_blank rel=noopener noreferrer>";
@@ -85,7 +85,7 @@ function Table_Reload()//表にデータを追加
 				{
 					text2 = text2 + "INVOICE" + "</a>";
 				}
-			//}
+			}
 
 			if(document.forms[i].elements[DATE_ARR].value != "")
 			{
