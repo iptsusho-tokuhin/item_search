@@ -45,6 +45,7 @@ function Table_Reload()//表にデータを追加
 
 	for(var i = 0; i <= max; i++)
 	{
+		text2 = "";
 		text3 = "";
 
 		if(document.forms[i].elements[LAT].value == "" && document.forms[i].elements[FLAG].value == 1)
