@@ -72,6 +72,10 @@ function Table_Reload()//表にデータを追加
 				{
 					text2 = "<a href = " + document.forms[i].elements[IV1].value + " target=_blank rel=noopener noreferrer>";
 				}
+				else
+				{
+					text2 = "<a>";
+				}
 
 				if(document.forms[i].elements[IVNO].value != "")
 				{
