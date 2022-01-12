@@ -125,9 +125,16 @@ function info_load(i)
 		f = 1;
 	}
 
-	if(document.forms[i].elements[SHIP].value != "")
+	
+	if(document.forms[i].elements[SHIP].value != "" && document.forms[i].elements[URL_SHIP].value != "")
 	{
 		infos[i] = infos[i] + "船名：<a href = " + document.forms[i].elements[URL_SHIP].value + " target=_blank rel=noopener noreferrer>" + document.forms[i].elements[SHIP].value + "</a><br>";
+		f = 1;
+	}
+	
+	if(document.forms[i].elements[SHIP].value != "" && document.forms[i].elements[URL_SHIP].value == "")
+	{
+		infos[i] = infos[i] + "船名：" + document.forms[i].elements[SHIP].value + "</a><br>";
 		f = 1;
 	}
 
