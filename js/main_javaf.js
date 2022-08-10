@@ -541,7 +541,7 @@ function includ_entry()
 	export_table();
 	menu_close();
 
-	var h = convert_date(date) + ' 棚卸 ' + data[place][0] + ' ' + stable + '馬房 ' + '(SP' + side_panel + '枚,BP' + back_panel + '枚,FP' + front_panel + '枚)';
+	var h = convert_date(date) + ' 棚卸 ' + data[place][0] + ' ' + stable + '馬房 ' + '(SP' + side_panel + '枚・BP' + back_panel + '枚・FP' + front_panel + '枚)';
 	set_history(h);
 }
 
