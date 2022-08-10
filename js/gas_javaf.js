@@ -16,22 +16,22 @@ function Output_to_gas()
 
 	for(var i = 0; i < note.length; i++)
 	{
-		for(var j = 0; j < note[i].length; j++)
-		{
-				text += note[i][j] + ',';
-		}
-		text += '\n';
+		//for(var j = 0; j < note[i].length; j++)
+		//{
+				text += note[i] + ',';
+		//}
+		//text += '\n';
 	}
 	
 	text += '***';//データ区切り
 	
 	for(var i = 0; i < his.length; i++)
 	{
-		for(var j = 0; j < his[i].length; j++)
-		{
-				text += his[i][j] + ',';
-		}
-		text += '\n';
+		//for(var j = 0; j < his.length; j++)
+		//{
+				text += his[i] + ',';
+		//}
+		//text += '\n';
 	}
 	
 	text += '***';//データ区切り
