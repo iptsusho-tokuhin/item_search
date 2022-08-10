@@ -9,7 +9,7 @@ function Output_to_gas()
 		{
 				text += data[i][j] + ',';
 		}
-		text += '\n' + ',';
+		text += '\n';
 	}
 	
 	text += '***';//データ区切り
@@ -20,7 +20,7 @@ function Output_to_gas()
 		{
 				text += note[i][j] + ',';
 		}
-		text += '\n' + ',';
+		text += '\n';
 	}
 	
 	text += '***';//データ区切り
@@ -31,7 +31,7 @@ function Output_to_gas()
 		{
 				text += his[i][j] + ',';
 		}
-		text += '\n' + ',';
+		text += '\n';
 	}
 	
 	text += '***';//データ区切り
