@@ -455,7 +455,7 @@ function move_entry()
 	export_table();
 	menu_close();
 
-	var h = convert_date(date) + ' 移動 ' + data[place1][0] + ' → ' + data[place2][0] + ' ' + stable + '馬房 ' + '(SP' + side_panel + '枚,BP' + back_panel + '枚,FP' + front_panel + '枚)';
+	var h = convert_date(date) + ' 移動 ' + data[place1][0] + ' → ' + data[place2][0] + ' ' + stable + '馬房 ' + '(SP' + side_panel + '枚・BP' + back_panel + '枚・FP' + front_panel + '枚)';
 	set_history(h);
 	set_note(place1,elm[0][12].value);
 	set_note(place2,elm[0][14].value);
