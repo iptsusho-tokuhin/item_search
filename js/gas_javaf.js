@@ -7,7 +7,7 @@ function Output_to_gas()
 	{
 		for(var j = 0; j < data[i].length; j++)
 		{
-				text = text + data[i][j] + ',';
+				text += data[i][j] + ',';
 		}
 		text += '\n' + ',';
 	}
@@ -18,7 +18,7 @@ function Output_to_gas()
 	{
 		for(var j = 0; j < note[i].length; j++)
 		{
-				text = text + note[i][j] + ',';
+				text += data[i][j] + ',';
 		}
 		text += '\n' + ',';
 	}
@@ -29,7 +29,7 @@ function Output_to_gas()
 	{
 		for(var j = 0; j < his[i].length; j++)
 		{
-				text = text + his[i][j] + ',';
+				text += data[i][j] + ',';
 		}
 		text += '\n' + ',';
 	}
