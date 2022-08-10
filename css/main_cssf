@@ -1,0 +1,152 @@
+.tytle{
+	font-size:	150%;
+}
+
+.select {
+	background-color: darkgray;
+	padding:	30px;
+	border-radius:	20px;
+	position:	fixed;
+	display:	none;
+	cursor:		move;
+	z-index: 	100;
+}
+
+.close {
+	background-color: white;	
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	//color: #fff;
+	font-size: 25px;
+	text-align: center;
+	line-height: 40px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor:		pointer;
+
+}
+
+.select1 {
+	background-color: deepskyblue;
+	padding:	20px;
+	border-radius:	10px;
+	display: inline-block;
+	cursor:		pointer;
+}
+
+.select2 {
+	background-color: springgreen;
+	padding:	20px;
+	border-radius:	10px;
+	display: inline-block;
+	cursor:		pointer;
+}
+
+.select3 {
+	background-color: orange;
+	padding:	20px;
+	border-radius:	10px;
+	display: inline-block;
+	cursor:		pointer;
+}
+
+.move {
+	background-color: deepskyblue;
+	padding:	30px;
+	border-radius:	20px;
+	position:	fixed;
+	display:	none;
+	cursor:		move;
+	z-index: 	100;
+}
+
+.build {
+	background-color: springgreen;
+	padding:	30px;
+	border-radius:	20px;
+	position:	fixed;
+	display:	none;
+	cursor:		move;
+	z-index: 	100;
+}
+
+.demolition {
+	background-color: orange;
+	padding:	30px;
+	border-radius:	20px;
+	position:	fixed;
+	display:	none;
+	cursor:		move;
+	z-index: 	100;
+}
+
+.entry {
+	background-color: darkgray;
+	padding:	20px;
+	border-radius:	10px;
+	display: inline-block;
+	cursor:		pointer;
+}
+
+.main {
+	display:block;
+	overflow:auto;
+}
+
+.table {
+	border-collapse: collapse;
+}
+
+.history {
+	vertical-align: top;
+}
+
+.forum {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.memo {
+	display: inline-block;
+}
+
+.note {
+	background-color: paleturquoise;
+	padding:	20px;
+	border-radius:	20px;
+	display:	none;
+}
+
+.button {
+	margin:		10px;
+	background-color: white;
+	border: 2px solid;
+	padding:	10px;
+	border-radius:	10px;
+	display: 	inline-block;
+	cursor:		pointer;
+}
+
+.customer {
+	background-color: white;
+	border: 2px solid;
+	padding:	30px;
+	border-radius:	20px;
+	position:	fixed;
+	display:	none;
+	cursor:		move;
+	z-index: 	100;
+}
+
+.includ {
+	background-color: white;
+	border: 2px solid;
+	padding:	30px;
+	border-radius:	20px;
+	position:	fixed;
+	display:	none;
+	cursor:		move;
+	z-index: 	100;
+}
