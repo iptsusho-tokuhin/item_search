@@ -170,6 +170,7 @@ function set_history(h)				//操作履歴に追加
 	var time = '[' + convert_date(d) + ' ' + hour + ':' + min + ':' + sec +']';
 	his.push(time + h);
 	road_history();
+	Output_to_gas();
 }
 
 function road_history()				//操作履歴を表示
