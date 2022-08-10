@@ -1,7 +1,7 @@
 function Output_to_gas()
 {
 	//document.getElementById('startes').innerHTML = "保存中";
-	var text = "";
+	var text = '';
 	
 	for(var i = 0; i < data.length; i++)
 	{
@@ -37,7 +37,7 @@ function Output_to_gas()
 	text += '***';//データ区切り
 	
 	text += document.getElementById('forum').value;
-	alert('ここまで');
+	//alert('ここまで');
 	google.script.run.withSuccessHandler(showStartes).write_ss(text);
 }
 
