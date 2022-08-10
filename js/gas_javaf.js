@@ -36,7 +36,7 @@ function Output_to_gas()
 	
 	text += '***';//データ区切り
 	
-	text += document.getElementById('forum').value + ',/n';
+	text += document.getElementById('forum').value + ',,/n';
 	//alert('ここまで');
 	google.script.run.withSuccessHandler(showStartes).write_ss(text);
 }
