@@ -43,6 +43,7 @@ function Output_to_gas()
 
 function showStartes(returnString)
 {
+	alert(returnString);
 	//document.getElementById('startes').innerHTML = returnString;
 }
    
