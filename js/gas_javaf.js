@@ -1,61 +1,49 @@
 function Output_to_gas()
 {
-	document.getElementById('startes').innerHTML = "保存中";
-	let text = "";
-	var data;
-
-	for(var i = 0; i <= max; i++)
+	//document.getElementById('startes').innerHTML = "保存中";
+	var text = "";
+	
+	for(var i = 0; i < data.length; i++)
 	{
-		for(var j = 0; j <= FLAG; j++)
+		for(var j = 0; j < data[i].length; j++)
 		{
-			if(j == AUTO||j == TABLE)
-			{
-				if(document.forms[i].elements[j].checked == true){data = 1;}else{data = "";}
-			}
-			else if(j == IVNO||j == DATE_DEP||j == DATE_ARR)
-			{
-				data = "##" + document.forms[i].elements[j].value;
-			}
-			else
-			{
-				data = document.forms[i].elements[j].value;
-			}
-				text = text + data + ',';
+				text = text + data[i][j] + ',';
 		}
-		text = text +  '***';
-	}
-
-	for(var i = max + 1; i <= max + 10; i++)
-	{
-		for(var j = 0; j <= 4; j++)
-		{
-		if(j == 2)
-		{
-			if(document.forms[i].elements[j].checked == true){data = 1;}else{data = "";}
-		}
-		else
-		{
-			data = document.forms[i].elements[j].value;
-		}
-		text = text + data + ',';
-        }
-        text = text + '***';
+		text += '\n';
 	}
 	
-	var today = new Date();
-	today.setDate(today.getDate());
-	var yyyy = today.getFullYear();
-	var mm = ("0"+(today.getMonth()+1)).slice(-2);
-	var dd = ("0"+today.getDate()).slice(-2);
- 	var date = yyyy + "年" + mm + "月" + dd + "日";
-		
-	text = text + "　発注済・船便未確定案件　更新日" + date;
+	text += '***';//データ区切り
+
+	for(var i = 0; i < note.length; i++)
+	{
+		for(var j = 0; j < note[i].length; j++)
+		{
+				text = text + note[i][j] + ',';
+		}
+		text += '\n';
+	}
+	
+	text += '***';//データ区切り
+	
+	for(var i = 0; i < his.length; i++)
+	{
+		for(var j = 0; j < his[i].length; j++)
+		{
+				text = text + his[i][j] + ',';
+		}
+		text += '\n';
+	}
+	
+	text += '***';//データ区切り
+	
+	text += document.getElementById('forum').value;
+
 	google.script.run.withSuccessHandler(showStartes).write_ss(text);
 }
 
 function showStartes(returnString)
 {
-	document.getElementById('startes').innerHTML = returnString;
+	//document.getElementById('startes').innerHTML = returnString;
 }
    
 function Intput_from_gas()
