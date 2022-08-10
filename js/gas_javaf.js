@@ -18,7 +18,7 @@ function Output_to_gas()
 	{
 		for(var j = 0; j < note[i].length; j++)
 		{
-				text += data[i][j] + ',';
+				text += note[i][j] + ',';
 		}
 		text += '\n' + ',';
 	}
@@ -29,7 +29,7 @@ function Output_to_gas()
 	{
 		for(var j = 0; j < his[i].length; j++)
 		{
-				text += data[i][j] + ',';
+				text += his[i][j] + ',';
 		}
 		text += '\n' + ',';
 	}
