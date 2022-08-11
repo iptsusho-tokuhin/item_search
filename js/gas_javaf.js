@@ -18,7 +18,7 @@ function Output_to_gas()
 	{
 		//for(var j = 0; j < note[i].length; j++)
 		//{
-				text += note[i] + ',0,0,' + '\n';
+				text += note[i] + ',' + '\n';
 		//}
 		//text += '\n';
 	}
@@ -29,14 +29,14 @@ function Output_to_gas()
 	{
 		//for(var j = 0; j < his.length; j++)
 		//{
-				text += his[i] + ',0,0,' + '\n';
+				text += his[i] + ',' + '\n';
 		//}
 		//text += '\n';
 	}
 	
 	text += '***';//データ区切り
 	
-	text += document.getElementById('forum').value + ',0,0,\n';
+	text += document.getElementById('forum').value;
 	//alert('ここまで');
 	google.script.run.withSuccessHandler(showStartes).write_ss(text);
 }
