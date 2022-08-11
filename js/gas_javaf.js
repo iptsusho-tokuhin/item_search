@@ -38,7 +38,7 @@ function Output_to_gas()
 	
 	text += document.getElementById('forum').value;
 	//alert('ここまで');
-	google.script.run.withSuccessHandler(showStartes).write_ss(text);
+	google.script.run.withSuccessHandler(showStartes).write_ss(text) + ',' + '\n';
 }
 
 function showStartes(returnString)
