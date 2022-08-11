@@ -36,9 +36,9 @@ function Output_to_gas()
 	
 	text += '***';//データ区切り
 	
-	text += document.getElementById('forum').value;
+	text += document.getElementById('forum').value + ',' + '\n';
 	//alert('ここまで');
-	google.script.run.withSuccessHandler(showStartes).write_ss(text) + ',' + '\n';
+	google.script.run.withSuccessHandler(showStartes).write_ss(text);
 }
 
 function showStartes(returnString)
