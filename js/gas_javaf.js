@@ -66,20 +66,18 @@ function output_to_html(text)
 		}
 	}
 	
-	var output = ''
-	
-	for(var i = 0; i < arr3.length; i++)
-	{
-		for(var j = 0; j < arr3[i].length; j++)
-		{
-			//for(var k = 0; j < arr3[i][j].length; k++)
-			//{
-			//	arr3[i][j][k];
-			//}
-			
-			output += arr3[i][j].length + '\n'
-		}
-	}
+	data = arr3[0];
+	note = arr3[1];
+	history = arr3[2];
+	forum = arr3[3][0][0];
+	//var output = ''
+	//for(var i = 0; i < arr3.length; i++)
+	//{
+	//	for(var j = 0; j < arr3[i].length; j++)
+	//	{
+	//		output += arr3[i][j].length + '\n'
+	//	}
+	//}
 
-	document.getElementById('forum').value = output;
+	//document.getElementById('forum').value = output;
 }
