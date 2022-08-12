@@ -38,7 +38,7 @@ function showStartes(returnString)
 	Intput_from_gas();//動作お試し
 	//document.getElementById('startes').innerHTML = returnString;
 }
-   
+
 function Intput_from_gas()
 {
 	//document.getElementById('startes').innerHTML = "読込中";
@@ -47,5 +47,38 @@ function Intput_from_gas()
 
 function output_to_html(text)
 {
-	document.getElementById('forum').value = text;
+	//動作試験
+	var arr1 = text.split('***');
+	var arr2 = [];
+	var arr3 = [];
+	for(var i = 0; i < arr1.length; i++)
+	{
+		arr2[i] = arr1[i].split('\n');
+	}
+	
+	for(var i = 0; i < arr2.length; i++)
+	{
+		arr3[i] = [];
+		for(var j = 0; j < arr2[i].length; j++)
+		{
+			arr3[i][j] = arr2[i][j].split(',');
+		}
+	}
+	
+	var output = ''
+	
+	for(var i = 0; i < arr3.length; i++)
+	{
+		for(var j = 0; j < arr3[i].length; j++)
+		{
+			//for(var k = 0; j < arr3[i][j].length; k++)
+			//{
+			//	arr3[i][j][k];
+			//}
+			
+			output += arr3[i][j].length + '\n'
+		}
+	}
+
+	document.getElementById('forum').value = output;
 }
