@@ -77,6 +77,8 @@ function output_to_html(text)
 	road_history();
 	set_select();
 	
+	document.getElementById('forum').value = forum.replace(/<br>/g, "\n");
+	
 	//var output = ''
 	//for(var i = 0; i < arr3.length; i++)
 	//{
