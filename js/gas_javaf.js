@@ -67,8 +67,8 @@ function output_to_html(text)
 	}
 	
 	data = arr3[0];
-	note = arr3[1];
-	his = arr3[2];
+	for(var i = 0; i < arr3[1].length; i++){note[i] = arr3[1][i]);}
+	for(var i = 0; i < arr3[2].length; i++){his[i] = arr3[2][i]);}
 	forum = arr3[3][0][0];
 	
 	set_data();
