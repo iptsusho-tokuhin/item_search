@@ -70,6 +70,13 @@ function output_to_html(text)
 	note = arr3[1];
 	history = arr3[2];
 	forum = arr3[3][0][0];
+	
+	set_data();
+	export_table();
+	main.scrollLeft = 9999999999999999999999999999999999;
+	road_history();
+	set_select();
+	
 	//var output = ''
 	//for(var i = 0; i < arr3.length; i++)
 	//{
