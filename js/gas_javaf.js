@@ -68,7 +68,7 @@ function output_to_html(text)
 	
 	data = arr3[0];
 	note = arr3[1];
-	history = arr3[2];
+	his = arr3[2];
 	forum = arr3[3][0][0];
 	
 	set_data();
