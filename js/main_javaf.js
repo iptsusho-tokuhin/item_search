@@ -178,10 +178,12 @@ function set_history(h)				//操作履歴に追加
 
 function road_history()				//操作履歴を表示
 {
-	if(his.length == 0){return;}
-	var text = '';
-	for(var i = his.length-1;i >= 0; i--){text += his[i] + '<br>';}
-	document.getElementById('history').innerHTML = text;
+	if(his.length != 0)
+	{
+		var text = '';
+		for(var i = his.length-1;i >= 0; i--){text += his[i] + '<br>';}
+		document.getElementById('history').innerHTML = text;
+	}
 }
 
 
