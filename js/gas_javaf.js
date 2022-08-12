@@ -64,7 +64,7 @@ function output_to_html(text)
 		{
 			arr3[i][j] = arr2[i][j].split(',');
 		}
-		arr3[i][j].pop();//各最後の行はごみデータになるので削除
+
 	}
 	
 	data = arr3[0];
