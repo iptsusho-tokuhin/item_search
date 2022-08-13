@@ -475,8 +475,8 @@ function move_entry()
 
 	var h = convert_date(date) + ' 移動 ' + data[place1][0] + ' → ' + data[place2][0] + ' ' + stable + '馬房 ' + '(SP' + side_panel + '枚・BP' + back_panel + '枚・FP' + front_panel + '枚)';
 	set_history(h);
-	set_note(place1,elm[0][12].value);
-	set_note(place2,elm[0][14].value);
+	set_note(place1,elm[0][12].value.replace(/\r?\n/g, '<br>'));
+	set_note(place2,elm[0][14].value.replace(/\r?\n/g, '<br>'));
 }
 
 function build_and_demolition_entry(f)
