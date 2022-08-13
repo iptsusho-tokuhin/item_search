@@ -67,7 +67,15 @@ function output_to_html(text)
 		}
 	}
 	
-	data = arr3[0];
+	//data = arr3[0];
+	for(var i = 0; i < arr3[0].length; i++)
+	{
+		data[i] = [];
+		for(var i = 0; i < arr3[0][i].length-1; i++)
+		{
+			data[i][j] = arr3[0][i][j];
+		}
+	}
 	for(var i = 0; i < arr3[1].length; i++){note[i] = arr3[1][i][0];}
 	for(var i = 0; i < arr3[2].length; i++){his[i] = arr3[2][i][0];}
 	forum = arr3[3][0][0];
