@@ -85,8 +85,8 @@ function output_to_html(text)
 	main.scrollLeft = 9999999999999999999999999999999999;
 	road_history();
 	set_select();
-	
-	document.getElementById('forum').value = forum.replace(/<br>/g, "\n");
+	document.getElementById('forum').value = text;
+	//document.getElementById('forum').value = forum.replace(/<br>/g, "\n");
 	
 	//var output = ''
 	//for(var i = 0; i < arr3.length; i++)
