@@ -327,6 +327,10 @@ function menu_open(column,row)
 	elm[0][2].value = row;
 	elm[1][1].value = row;
 	elm[2][1].value = row;
+	
+	elm[0][14].value = road_note(row);
+	elm[1][5].value = road_note(row);
+	elm[2][5].value = road_note(row);
 
 	set_max();
 }
@@ -351,6 +355,7 @@ function menu_close()
 
 function menu_select(n)
 {
+	document.getElementById('select').style.display = 'none';
 	set_date_min_max();
 	switch (n) {
 		case 0:
