@@ -71,7 +71,7 @@ function output_to_html(text)
 	for(var i = 0; i < arr3[0].length; i++)
 	{
 		data[i] = [];
-		for(var i = 0; i < arr3[0][i].length-1; i++)
+		for(var j = 0; j < arr3[0][i].length-1; j++)
 		{
 			data[i][j] = arr3[0][i][j];
 		}
