@@ -70,7 +70,7 @@ function output_to_html(text)
 	data = arr3[0];
 	for(var i = 0; i < arr3[1].length; i++){note[i] = arr3[1][i][0];}
 	for(var i = 0; i < arr3[2].length; i++){his[i] = arr3[2][i][0];}
-	forum = arr3[3][0][0];
+	forum = arr3[3][0][0].replace(/<br>/g, "\n");;
 	
 	set_data();
 	export_table();
