@@ -46,7 +46,7 @@ function Intput_from_gas()
 }
 
 function output_to_html(text)
-{
+{document.getElementById('forum').value = text;
 	//動作試験
 	var arr1 = text.split('***');
 	var arr2 = [];
