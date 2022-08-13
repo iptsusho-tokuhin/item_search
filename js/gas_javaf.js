@@ -28,7 +28,7 @@ function Output_to_gas()
 	
 	text += '***';//データ区切り
 	
-	text += document.getElementById('forum').value + ',' + '\n';
+	text += document.getElementById('forum').value.replace(/\r?\n/g, '<br>') + ',' + '\n';
 	google.script.run.withSuccessHandler(showStartes).write_ss(text);
 }
 
