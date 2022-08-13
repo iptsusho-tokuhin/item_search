@@ -46,7 +46,7 @@ function Intput_from_gas()
 }
 
 function output_to_html(text)
-{document.getElementById('forum').value = text;
+{
 	//動作試験
 	var arr1 = text.split('***');
 	var arr2 = [];
@@ -68,35 +68,14 @@ function output_to_html(text)
 	}
 	
 	data = arr3[0];
-	//for(var i = 0; i < arr3[0].length; i++)
-	//{
-	//	data[i] = [];
-	//	for(var j = 0; j < arr3[0][i].length-1; j++)
-	//	{
-	//		data[i][j] = arr3[0][i][j];
-	//	}
-	//}
 	for(var i = 0; i < arr3[1].length; i++){note[i] = arr3[1][i][0];}
 	for(var i = 0; i < arr3[2].length; i++){his[i] = arr3[2][i][0];}
-	//forum = arr3[3][0][0];
+	forum = arr3[3][0][0];
 	
 	set_data();
 	export_table();
 	main.scrollLeft = 9999999999999999999999999999999999;
 	road_history();
 	set_select();
-	document.getElementById('forum').value = text;
-	//document.getElementById('forum').value = data.length+ '\n'+data[0].length+ '\n'+arr3[0][0].length;
-	//document.getElementById('forum').value = forum.replace(/<br>/g, "\n");
-	
-	//var output = ''
-	//for(var i = 0; i < arr3.length; i++)
-	//{
-	//	for(var j = 0; j < arr3[i].length; j++)
-	//	{
-	//		output += arr3[i][j].length + '\n'
-	//	}
-	//}
-
-	//document.getElementById('forum').value = output;
+	document.getElementById('forum').value = forum;
 }
