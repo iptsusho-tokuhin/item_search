@@ -36,7 +36,7 @@ function Output_to_gas()
 function showStartes(returnString)
 {
 	alert(returnString);
-	Intput_from_gas();//動作お試し
+	//Intput_from_gas();//動作お試し
 	//document.getElementById('startes').innerHTML = returnString;
 }
 
