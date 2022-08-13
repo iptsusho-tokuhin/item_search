@@ -116,6 +116,14 @@ Intput_from_gas();
 
 function set_data()				//今日までのデータを作成
 {
+	for(var i = 1;i < data.length; i++)
+	{
+		for(var j = 1;j < data[0].length; j++)
+		{
+			if(data[i][j] == ''){data[i][j] = '0';}
+		}
+	}
+	
 	var today = new Date();
 	var L = data[0].length;
 	for(var j = 1;;j++)
