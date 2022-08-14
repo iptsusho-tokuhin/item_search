@@ -75,7 +75,7 @@ function output_to_html(text)
 	
 	set_data();
 	export_table();
-	main.scrollLeft = 9999999999999999999999999999999999;
+	main.scrollLeft = 99;
 	road_history();
 	set_select();
 	document.getElementById('forum').value = forum;
