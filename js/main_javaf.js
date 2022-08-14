@@ -89,9 +89,9 @@ elm[4][5] = document.getElementById('includ_FP');
 var begin_date = document.getElementById('begin_date');
 var end_date = document.getElementById('end_date');
 var today = new Date();
-
-begin_date.value = '2022-01-01';//convert_date(today.setMonth(today.getMonth() - 1)).replace(/(\d+)\/(\d+)\/(\d+)/g,'$1-$2-$3');//'2022-01-01';
 end_date.value = convert_date(today).replace(/(\d+)\/(\d+)\/(\d+)/g,'$1-$2-$3');
+today.setMonth(today.getMonth() - 1);
+begin_date.value = convert_date(today).replace(/(\d+)\/(\d+)\/(\d+)/g,'$1-$2-$3');
 
 var table = document.getElementById('table');
 var main = document.getElementById('main');
