@@ -638,3 +638,10 @@ function set_date_min_max()//表示日の最大最小
 	elm[2][0].max = end_date.value;
 }
 
+function delete_taboo(e)//禁止文字を削除
+{
+	e.value = e.value.replace(/,/g, '');
+	e.value = e.value.replace(/\*/g, '');
+	e.value = e.value.replace(/\"/g, '');
+	e.value = e.value.replace(/\'/g, '');
+}
