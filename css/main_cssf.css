@@ -1,3 +1,42 @@
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  height: auto;
+}
+
+.stepper {
+  border: 1px solid #eee;
+  display: inline-block;
+  overflow: visible;
+  height: 1.3em;
+  background: #fff;
+  padding: 1px;
+}
+.stepper input {
+  width: 3em;
+  height: 100%;
+  text-align: center;
+  border: 0;
+  background: transparent;
+  color: #000;
+}
+.stepper button {
+  width: 1.0em;
+  font-weight: 400;
+  height: 100%;
+  line-height: 0.1em;
+  font-size: 1.4em;
+  padding: 0.2em !important;
+  background: #eee;
+  color: #333;
+  border: none;
+}
+
+input {
+  font-size: 16px;
+  transform: scale(0.8);
+}
+
 .tytle{
 	font-size:	150%;
 }
@@ -80,6 +119,14 @@
 	display:	none;
 	cursor:		move;
 	z-index: 	100;
+}
+
+.entry {
+	background-color: darkgray;
+	padding:	20px;
+	border-radius:	10px;
+	display: inline-block;
+	cursor:		pointer;
 }
 
 .main {
