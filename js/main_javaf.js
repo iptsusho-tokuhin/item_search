@@ -104,7 +104,21 @@ var main = document.getElementById('main');
 
 Intput_from_gas();
 
+function delete_taboo(e)
+{
+	e.value = e.value.replace(/,/g, '');
+	e.value = e.value.replace(/\*/g, '');
+	e.value = e.value.replace(/\"/g, '');
+	e.value = e.value.replace(/\'/g, '');
+}
 
+function up_down(m,n,add)
+{
+	var num = Number(elm[m][n].value);
+	elm[m][n].value = num + add;
+	includ_stable_change();
+	move_stable_change();
+}
 
 
 
