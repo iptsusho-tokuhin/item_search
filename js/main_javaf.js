@@ -486,13 +486,13 @@ function move_entry()
 		}
 	}
 
-	export_table();
-	menu_close();
-
 	var h = convert_date(date) + ' 移動 ' + data[place1][0] + ' → ' + data[place2][0] + ' ' + stable + '馬房 ' + '(SP' + side_panel + '枚・BP' + back_panel + '枚・FP' + front_panel + '枚)';
 	set_history(h);
 	set_note(place1,elm[0][12].value.replace(/\r?\n/g, '<br>'));
 	set_note(place2,elm[0][14].value.replace(/\r?\n/g, '<br>'));
+	
+	export_table();
+	menu_close();
 }
 
 function build_and_demolition_entry(f)
@@ -515,9 +515,6 @@ function build_and_demolition_entry(f)
 		}
 	}
 
-	export_table();
-	menu_close();
-
 	if(f == 1){var h = convert_date(date) + ' 組立 ' + data[place][0] + ' ' + Number(elm[f][2].value) + '馬房 ';}
 	if(f == 2){var h = convert_date(date) + ' 解体 ' + data[place][0] + ' ' + Number(elm[f][2].value) + '馬房 ';}
 	set_history(h);
@@ -525,6 +522,8 @@ function build_and_demolition_entry(f)
 	if(f == 1){set_note(place,elm[1][5].value);}
 	if(f == 2){set_note(place,elm[2][5].value);}
 	
+	export_table();
+	menu_close();
 }
 
 function move_stable_change()			//移動する馬房数に合わせてパネル数を自動計算（20馬房1棟計算）
