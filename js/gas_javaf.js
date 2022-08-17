@@ -1,6 +1,6 @@
 function Output_to_gas()
 {
-	//document.getElementById('startes').innerHTML = "保存中";
+	document.getElementById('startes').innerHTML = "保存中";
 	var text = '';
 	
 	for(var i = 0; i < data.length; i++)
@@ -35,14 +35,14 @@ function Output_to_gas()
 
 function showStartes(returnString)
 {
-	alert(returnString);
+	//alert(returnString);
 	//Intput_from_gas();//動作お試し
-	//document.getElementById('startes').innerHTML = returnString;
+	document.getElementById('startes').innerHTML = returnString;
 }
 
 function Intput_from_gas()
 {
-	//document.getElementById('startes').innerHTML = "読込中";
+	document.getElementById('startes').innerHTML = "読込中";
 	google.script.run.withSuccessHandler(output_to_html).read_ss();
 }
 
@@ -79,4 +79,5 @@ function output_to_html(text)
 	road_history();
 	set_select();
 	document.getElementById('forum').value = forum;
+	document.getElementById('startes').innerHTML = "読込完了";
 }
