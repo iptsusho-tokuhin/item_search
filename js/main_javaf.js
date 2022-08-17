@@ -104,6 +104,13 @@ var main = document.getElementById('main');
 
 Intput_from_gas();
 
+function forum_change(e)
+{
+	delete_taboo(e)
+	var h = ' 掲示板変更';
+	set_history(h);
+}
+
 function delete_taboo(e)
 {
 	e.value = e.value.replace(/,/g, '');
