@@ -102,31 +102,6 @@ var main = document.getElementById('main');
 
 Intput_from_gas();
 
-function forum_change(e)
-{
-	delete_taboo(e)
-	var h = '掲示板変更';
-	set_history(h);
-}
-
-function up_down(m,n,add)
-{
-	var num = Number(elm[m][n].value);
-	elm[m][n].value = num + add;
-	includ_stable_change();
-	move_stable_change();
-}
-
-
-
-
-
-
-
-
-
-
-
 function set_data()				//今日までのデータを作成
 {
 	for(var i = 1;i < data.length; i++)
@@ -159,7 +134,236 @@ function set_data()				//今日までのデータを作成
 	}
 }
 
-function set_select()				//selectを再設定
+
+//******************************************************************************　登録
+function move_entry()				//厩舎の移動を登録
+{
+	var date	= new Date(elm[0][0].value);
+	var place1 	= Number(elm[0][1].value);
+	var place2 	= Number(elm[0][2].value);
+	var stable	= Number(elm[0][3].value);
+	var side_panel	= Number(elm[0][4].value);
+	var back_panel	= Number(elm[0][5].value);
+	var front_panel	= Number(elm[0][6].value);
+
+	if(place1 == 0 || place2 == 0){alert('移動元or移動先が未選択です。');return;}
+	var d;
+
+	for(var i = 1; i < data[0].length; i++)
+	{
+		d = get_date(data[0][i]);
+		if(date <= d)
+		{
+			data[place1][i]     = String(Number(data[place1][i]) - stable);
+			data[place1 + 2][i] = String(Number(data[place1 + 2][i]) - side_panel);
+			data[place1 + 3][i] = String(Number(data[place1 + 3][i]) - back_panel);
+			data[place1 + 4][i] = String(Number(data[place1 + 4][i]) - front_panel);
+
+			data[place2][i]     = String(Number(data[place2][i]) + stable);
+			data[place2 + 2][i] = String(Number(data[place2 + 2][i]) + side_panel);
+			data[place2 + 3][i] = String(Number(data[place2 + 3][i]) + back_panel);
+			data[place2 + 4][i] = String(Number(data[place2 + 4][i]) + front_panel);
+		}
+	}
+
+	var h = convert_date(date) + ' 移動 ' + data[place1][0] + ' → ' + data[place2][0] + ' ' + stable + '馬房 ' + '(SP' + side_panel + '枚・BP' + back_panel + '枚・FP' + front_panel + '枚)';
+	set_history(h);
+	set_note(place1,elm[0][12].value.replace(/\r?\n/g, '<br>'));
+	set_note(place2,elm[0][14].value.replace(/\r?\n/g, '<br>'));
+	
+	export_table();
+	menu_close();
+}
+
+function build_and_demolition_entry(f)		//厩舎の組立・解体を登録
+{
+	var date   = new Date(elm[f][0].value);
+	var place  = Number(elm[f][1].value);
+	var stable;
+
+	if(f == 1){stable =  Number(elm[f][2].value);}
+	if(f == 2){stable = -Number(elm[f][2].value);}
+
+	var d;
+
+	for(var i = 1; i < data[0].length; i++)
+	{
+		d = get_date(data[0][i]);
+		if(date <= d)
+		{
+			data[place + 1][i] = String(Number(data[place + 1][i]) + stable);
+		}
+	}
+
+	if(f == 1){var h = convert_date(date) + ' 組立 ' + data[place][0] + ' ' + Number(elm[f][2].value) + '馬房 ';}
+	if(f == 2){var h = convert_date(date) + ' 解体 ' + data[place][0] + ' ' + Number(elm[f][2].value) + '馬房 ';}
+	set_history(h);
+
+	if(f == 1){set_note(place,elm[1][5].value);}
+	if(f == 2){set_note(place,elm[2][5].value);}
+	
+	export_table();
+	menu_close();
+}
+
+function customer_entry(f)			//新規顧客を登録
+{
+	if(f == 0)
+	{
+		if(elm[3][1].value == ''){alert('空欄は不適です');return;}
+		var h = ' 名前変更 ' + data[elm[3][0].value][0] + ' → ' + elm[3][1].value;
+		data[elm[3][0].value][0] = elm[3][1].value;
+	}
+	else if(f == 1)
+	{
+		if(elm[3][2].value == ''){alert('空欄は不適です');return;}
+		var arry1 = [elm[3][2].value,	'0'];
+		var arry2 = ['馬房数',		'0'];
+		var arry3 = ['サイドパネル',	'0'];
+		var arry4 = ['バックパネル',	'0'];
+		var arry5 = ['フロントパネル',	'0'];
+
+		data.push(arry1);
+		data.push(arry2);
+		data.push(arry3);
+		data.push(arry4);
+		data.push(arry5);
+		note.push('');
+		for(var i = 1; i < data[0].length; i++)
+		{
+			data[data.length-5][i] = '0';
+			data[data.length-4][i] = '0';
+			data[data.length-3][i] = '0';
+			data[data.length-2][i] = '0';
+			data[data.length-1][i] = '0';
+		}
+		var h = ' 顧客追加 ' + elm[3][2].value;
+	}
+	set_data();
+	set_select();
+	export_table();
+	menu_close();
+	set_history(h);
+}
+
+function includ_entry()			//棚卸を登録
+{
+	var date	= new Date(elm[4][0].value);
+	var place 	= Number(elm[4][1].value);
+	var stable	= Number(elm[4][2].value);
+	var side_panel	= Number(elm[4][3].value);
+	var back_panel	= Number(elm[4][4].value);
+	var front_panel	= Number(elm[4][5].value);
+
+	if(place == 0){alert('入出荷場所が未選択です。');return;}
+	var d;
+
+	for(var i = 1; i < data[0].length; i++)
+	{
+		d = get_date(data[0][i]);
+		if(date <= d)
+		{
+			data[place][i]     = String(Number(data[place][i]) + stable);
+			data[place + 2][i] = String(Number(data[place + 2][i]) + side_panel);
+			data[place + 3][i] = String(Number(data[place + 3][i]) + back_panel);
+			data[place + 4][i] = String(Number(data[place + 4][i]) + front_panel);
+		}
+	}
+
+	export_table();
+	menu_close();
+
+	var h = convert_date(date) + ' 棚卸 ' + data[place][0] + ' ' + stable + '馬房 ' + '(SP' + side_panel + '枚・BP' + back_panel + '枚・FP' + front_panel + '枚)';
+	set_history(h);
+}
+
+function forum_change(e)		//掲示板を登録（内容が変更されたら登録）
+{
+	delete_taboo(e)
+	var h = '掲示板変更';
+	set_history(h);
+}
+
+
+
+//******************************************************************************　メニュー
+function menu_open(column,row)		//移動・組立・解体メニューの選択を表示
+{
+	menu_close();
+	document.getElementById('select').style.display = 'block';
+
+	var date = data[0][column].replace(/(\d+)\/(\d+)\/(\d+)/g,'$1-$2-$3');
+	for(var i = 0; i <= 2; i++){elm[i][0].value = date;}
+
+	for(var i = 3; i <= 6; i++){elm[0][i].value = 0;}
+
+	elm[1][2].value = 0;
+	elm[2][2].value = 0;
+
+	elm[0][1].value = 0;
+	elm[0][2].value = row;
+	elm[1][1].value = row;
+	elm[2][1].value = row;
+	
+	elm[0][14].value = road_note(row);
+	elm[1][5].value = road_note(row);
+	elm[2][5].value = road_note(row);
+
+	set_max();
+}
+
+function menu_close()			//メニューを閉じる
+{
+	document.getElementById('select').style.display = 'none';
+	document.getElementById('move').style.display = 'none';
+	document.getElementById('build').style.display = 'none';
+	document.getElementById('demolition').style.display = 'none';
+	document.getElementById('customer').style.display = 'none';
+	document.getElementById('includ').style.display = 'none';
+	set_table_color();
+	for(var i = 0; i < elm.length; i++)	
+	{
+		for(var j = 0; j < elm[i].length; j++)//データ出力
+		{
+			elm[i][j].value = '';
+		}
+	}
+}
+
+function menu_select(n)			//移動・組立・解体・顧客追加・棚卸のメニューを表示
+{
+	document.getElementById('select').style.display = 'none';
+	set_date_min_max();
+	switch (n) {
+		case 0:
+		document.getElementById('move').style.display = 'block';break;
+  		case 1:
+		document.getElementById('build').style.display = 'block';break;
+  		case 2:
+		document.getElementById('demolition').style.display = 'block';break;
+		case 3:
+		menu_close();
+		document.getElementById('customer').style.display = 'block';break;
+  		case 4:
+		menu_close();
+		elm[4][0].value = convert_date(new Date()).replace(/(\d+)\/(\d+)\/(\d+)/g,'$1-$2-$3');
+		elm[4][1].value = '1';
+		document.getElementById('includ').style.display = 'block';break;
+  		default:
+	}
+}
+
+
+//******************************************************************************　メニュー操作
+function up_down(m,n,add)			//馬房数などのアップダウン
+{
+	var num = Number(elm[m][n].value);
+	elm[m][n].value = num + add;
+	includ_stable_change();
+	move_stable_change();
+}
+
+function set_select()				//select（顧客）を再設定
 {
 	var select = [];
 	select[0] = elm[0][1];//select要素を取得する
@@ -184,30 +388,6 @@ function set_select()				//selectを再設定
 		}
 	}
 }
-
-function set_history(h)				//操作履歴に追加
-{
-	var d = new Date();
-	var hour = ('00' + d.getHours()).slice(-2);
-	var min = ('00' + d.getMinutes()).slice(-2);
-	var sec = ('00' + d.getSeconds()).slice(-2);
-	var time = '[' + convert_date(d) + ' ' + hour + ':' + min + ':' + sec +']';
-	his.push(time + h);
-	road_history();
-	Output_to_gas();
-}
-
-function road_history()				//操作履歴を表示
-{
-	if(his.length != 0)
-	{
-		var text = '';
-		for(var i = his.length-1;i >= 0; i--){text += his[i] + '<br>';}
-		document.getElementById('history').innerHTML = text;
-	}
-}
-
-
 
 function set_note(row,text)			//備考を書き込み
 {
@@ -250,149 +430,32 @@ function hidden_note()				//備考を非表示に
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function customer_entry(f)
+//******************************************************************************　操作履歴（操作履歴が動くとGASに登録）
+function set_history(h)				//操作履歴に追加
 {
-	if(f == 0)
+	var d = new Date();
+	var hour = ('00' + d.getHours()).slice(-2);
+	var min = ('00' + d.getMinutes()).slice(-2);
+	var sec = ('00' + d.getSeconds()).slice(-2);
+	var time = '[' + convert_date(d) + ' ' + hour + ':' + min + ':' + sec +']';
+	his.push(time + h);
+	road_history();
+	Output_to_gas();
+}
+
+function road_history()				//操作履歴を表示
+{
+	if(his.length != 0)
 	{
-		if(elm[3][1].value == ''){alert('空欄は不適です');return;}
-		var h = ' 名前変更 ' + data[elm[3][0].value][0] + ' → ' + elm[3][1].value;
-		data[elm[3][0].value][0] = elm[3][1].value;
-	}
-	else if(f == 1)
-	{
-		if(elm[3][2].value == ''){alert('空欄は不適です');return;}
-		var arry1 = [elm[3][2].value,	'0'];
-		var arry2 = ['馬房数',		'0'];
-		var arry3 = ['サイドパネル',	'0'];
-		var arry4 = ['バックパネル',	'0'];
-		var arry5 = ['フロントパネル',	'0'];
-
-		data.push(arry1);
-		data.push(arry2);
-		data.push(arry3);
-		data.push(arry4);
-		data.push(arry5);
-		note.push('');
-		for(var i = 1; i < data[0].length; i++)
-		{
-			data[data.length-5][i] = '0';
-			data[data.length-4][i] = '0';
-			data[data.length-3][i] = '0';
-			data[data.length-2][i] = '0';
-			data[data.length-1][i] = '0';
-		}
-		var h = ' 顧客追加 ' + elm[3][2].value;
-	}
-	set_data();
-	set_select();
-	export_table();
-	menu_close();
-	set_history(h);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function menu_open(column,row)
-{
-	menu_close();
-	document.getElementById('select').style.display = 'block';
-
-	var date = data[0][column].replace(/(\d+)\/(\d+)\/(\d+)/g,'$1-$2-$3');
-	for(var i = 0; i <= 2; i++){elm[i][0].value = date;}
-
-	for(var i = 3; i <= 6; i++){elm[0][i].value = 0;}
-
-	elm[1][2].value = 0;
-	elm[2][2].value = 0;
-
-	elm[0][1].value = 0;
-	elm[0][2].value = row;
-	elm[1][1].value = row;
-	elm[2][1].value = row;
-	
-	elm[0][14].value = road_note(row);
-	elm[1][5].value = road_note(row);
-	elm[2][5].value = road_note(row);
-
-	set_max();
-}
-
-function menu_close()
-{
-	document.getElementById('select').style.display = 'none';
-	document.getElementById('move').style.display = 'none';
-	document.getElementById('build').style.display = 'none';
-	document.getElementById('demolition').style.display = 'none';
-	document.getElementById('customer').style.display = 'none';
-	document.getElementById('includ').style.display = 'none';
-	set_table_color();
-	for(var i = 0; i < elm.length; i++)	
-	{
-		for(var j = 0; j < elm[i].length; j++)//データ出力
-		{
-			elm[i][j].value = '';
-		}
-	}
-}
-
-function menu_select(n)
-{
-	document.getElementById('select').style.display = 'none';
-	set_date_min_max();
-	switch (n) {
-		case 0:
-		document.getElementById('move').style.display = 'block';break;
-  		case 1:
-		document.getElementById('build').style.display = 'block';break;
-  		case 2:
-		document.getElementById('demolition').style.display = 'block';break;
-		case 3:
-		menu_close();
-		document.getElementById('customer').style.display = 'block';break;
-  		case 4:
-		menu_close();
-		elm[4][0].value = convert_date(new Date()).replace(/(\d+)\/(\d+)\/(\d+)/g,'$1-$2-$3');
-		elm[4][1].value = '1';
-		document.getElementById('includ').style.display = 'block';break;
-  		default:
+		var text = '';
+		for(var i = his.length-1;i >= 0; i--){text += his[i] + '<br>';}
+		document.getElementById('history').innerHTML = text;
 	}
 }
 
 
-
-
-function set_max()				//移動・組立・解体可能な最大値を設定
+//******************************************************************************　データの入力可能最大値などを計算し入力制限する
+function set_max()			//移動・組立・解体可能な最大値を設定
 {
 	var date = [];
 	date[0] = get_date(elm[0][0].value);
@@ -453,75 +516,7 @@ function re_set_num(m,n)
 
 
 
-function move_entry()
-{
-	var date	= new Date(elm[0][0].value);
-	var place1 	= Number(elm[0][1].value);
-	var place2 	= Number(elm[0][2].value);
-	var stable	= Number(elm[0][3].value);
-	var side_panel	= Number(elm[0][4].value);
-	var back_panel	= Number(elm[0][5].value);
-	var front_panel	= Number(elm[0][6].value);
 
-	if(place1 == 0 || place2 == 0){alert('移動元or移動先が未選択です。');return;}
-	var d;
-
-	for(var i = 1; i < data[0].length; i++)
-	{
-		d = get_date(data[0][i]);
-		if(date <= d)
-		{
-			data[place1][i]     = String(Number(data[place1][i]) - stable);
-			data[place1 + 2][i] = String(Number(data[place1 + 2][i]) - side_panel);
-			data[place1 + 3][i] = String(Number(data[place1 + 3][i]) - back_panel);
-			data[place1 + 4][i] = String(Number(data[place1 + 4][i]) - front_panel);
-
-			data[place2][i]     = String(Number(data[place2][i]) + stable);
-			data[place2 + 2][i] = String(Number(data[place2 + 2][i]) + side_panel);
-			data[place2 + 3][i] = String(Number(data[place2 + 3][i]) + back_panel);
-			data[place2 + 4][i] = String(Number(data[place2 + 4][i]) + front_panel);
-		}
-	}
-
-	var h = convert_date(date) + ' 移動 ' + data[place1][0] + ' → ' + data[place2][0] + ' ' + stable + '馬房 ' + '(SP' + side_panel + '枚・BP' + back_panel + '枚・FP' + front_panel + '枚)';
-	set_history(h);
-	set_note(place1,elm[0][12].value.replace(/\r?\n/g, '<br>'));
-	set_note(place2,elm[0][14].value.replace(/\r?\n/g, '<br>'));
-	
-	export_table();
-	menu_close();
-}
-
-function build_and_demolition_entry(f)
-{
-	var date   = new Date(elm[f][0].value);
-	var place  = Number(elm[f][1].value);
-	var stable;
-
-	if(f == 1){stable =  Number(elm[f][2].value);}
-	if(f == 2){stable = -Number(elm[f][2].value);}
-
-	var d;
-
-	for(var i = 1; i < data[0].length; i++)
-	{
-		d = get_date(data[0][i]);
-		if(date <= d)
-		{
-			data[place + 1][i] = String(Number(data[place + 1][i]) + stable);
-		}
-	}
-
-	if(f == 1){var h = convert_date(date) + ' 組立 ' + data[place][0] + ' ' + Number(elm[f][2].value) + '馬房 ';}
-	if(f == 2){var h = convert_date(date) + ' 解体 ' + data[place][0] + ' ' + Number(elm[f][2].value) + '馬房 ';}
-	set_history(h);
-
-	if(f == 1){set_note(place,elm[1][5].value);}
-	if(f == 2){set_note(place,elm[2][5].value);}
-	
-	export_table();
-	menu_close();
-}
 
 function move_stable_change()			//移動する馬房数に合わせてパネル数を自動計算（20馬房1棟計算）
 {
@@ -544,57 +539,9 @@ function includ_stable_change()			//移動する馬房数に合わせてパネ�
 	elm[4][5].value = st;
 }
 
-function includ_entry()
-{
-	var date	= new Date(elm[4][0].value);
-	var place 	= Number(elm[4][1].value);
-	var stable	= Number(elm[4][2].value);
-	var side_panel	= Number(elm[4][3].value);
-	var back_panel	= Number(elm[4][4].value);
-	var front_panel	= Number(elm[4][5].value);
-
-	if(place == 0){alert('入出荷場所が未選択です。');return;}
-	var d;
-
-	for(var i = 1; i < data[0].length; i++)
-	{
-		d = get_date(data[0][i]);
-		if(date <= d)
-		{
-			data[place][i]     = String(Number(data[place][i]) + stable);
-			data[place + 2][i] = String(Number(data[place + 2][i]) + side_panel);
-			data[place + 3][i] = String(Number(data[place + 3][i]) + back_panel);
-			data[place + 4][i] = String(Number(data[place + 4][i]) + front_panel);
-		}
-	}
-
-	export_table();
-	menu_close();
-
-	var h = convert_date(date) + ' 棚卸 ' + data[place][0] + ' ' + stable + '馬房 ' + '(SP' + side_panel + '枚・BP' + back_panel + '枚・FP' + front_panel + '枚)';
-	set_history(h);
-}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//******************************************************************************　各種補助関数
 function get_date(date)//yyyy/mm/dd形式をdateに変換
 {
 	var year = Number(date.substring(0, 4));
@@ -613,8 +560,6 @@ function convert_date(dt)//dateをyyyy/mm/dd形式に変換
 	var date = y + '/' + m + '/' + d;
 	return date;
 }
-
-
 
 function search_max(row,date,f)//row列のdate日以降の最小値をmaxとして返す
 {
