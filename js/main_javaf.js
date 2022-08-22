@@ -84,8 +84,6 @@ elm[4][3] = document.getElementById('includ_SP');
 elm[4][4] = document.getElementById('includ_BP');
 elm[4][5] = document.getElementById('includ_FP');
 
-
-
 var begin_date = document.getElementById('begin_date');
 var end_date = document.getElementById('end_date');
 var today = new Date();
@@ -107,16 +105,8 @@ Intput_from_gas();
 function forum_change(e)
 {
 	delete_taboo(e)
-	var h = ' 掲示板変更';
+	var h = '掲示板変更';
 	set_history(h);
-}
-
-function delete_taboo(e)
-{
-	e.value = e.value.replace(/,/g, '');
-	e.value = e.value.replace(/\*/g, '');
-	e.value = e.value.replace(/\"/g, '');
-	e.value = e.value.replace(/\'/g, '');
 }
 
 function up_down(m,n,add)
@@ -169,7 +159,7 @@ function set_data()				//今日までのデータを作成
 	}
 }
 
-function set_select()				//selectを再設定（valueにはrow値が入る）
+function set_select()				//selectを再設定
 {
 	var select = [];
 	select[0] = elm[0][1];//select要素を取得する
@@ -661,6 +651,14 @@ function set_date_min_max()//表示日の最大最小
 }
 
 function delete_taboo(e)//禁止文字を削除
+{
+	e.value = e.value.replace(/,/g, '');
+	e.value = e.value.replace(/\*/g, '');
+	e.value = e.value.replace(/\"/g, '');
+	e.value = e.value.replace(/\'/g, '');
+}
+
+function delete_taboo(e)
 {
 	e.value = e.value.replace(/,/g, '');
 	e.value = e.value.replace(/\*/g, '');
