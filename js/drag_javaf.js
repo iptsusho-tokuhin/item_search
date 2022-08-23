@@ -98,7 +98,7 @@ target[4].ondragstart = function(){return false;};
 target[5].ondragstart = function(){return false;};
 
 
-function moveAt(pageX, pageY)
+function moveAt(clientX, clientY)
 {
 	target[0].style.left = clientX + 'px';
 	target[0].style.top = clientY + 'px';
