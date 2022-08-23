@@ -11,8 +11,8 @@ target[0].onmousedown = function(event)
 	var shiftX = event.clientX - this.getBoundingClientRect().left;
 	var shiftY = event.clientY - this.getBoundingClientRect().top;
 
-	moveAt(event.pageX - shiftX, event.pageY - shiftY)
-	function onMouseMove(event){moveAt(event.pageX - shiftX, event.pageY - shiftY);}
+	moveAt(event.clientX - shiftX, event.clientY - shiftY)
+	function onMouseMove(event){moveAt(event.clientX - shiftX, event.clientY - shiftY);}
 	document.addEventListener('mousemove', onMouseMove);
 	this.onmouseup = function() {
 		document.removeEventListener('mousemove', onMouseMove);
@@ -25,8 +25,8 @@ target[1].onmousedown = function(event)
 	var shiftX = event.clientX - this.getBoundingClientRect().left;
 	var shiftY = event.clientY - this.getBoundingClientRect().top;
 
-	moveAt(event.pageX - shiftX, event.pageY - shiftY)
-	function onMouseMove(event){moveAt(event.pageX - shiftX, event.pageY - shiftY);}
+	moveAt(event.clientX - shiftX, event.clientY - shiftY)
+	function onMouseMove(event){moveAt(event.clientX - shiftX, event.clientY - shiftY);}
 	document.addEventListener('mousemove', onMouseMove);
 	this.onmouseup = function() {
 		document.removeEventListener('mousemove', onMouseMove);
@@ -39,8 +39,8 @@ target[2].onmousedown = function(event)
 	var shiftX = event.clientX - this.getBoundingClientRect().left;
 	var shiftY = event.clientY - this.getBoundingClientRect().top;
 
-	moveAt(event.pageX - shiftX, event.pageY - shiftY)
-	function onMouseMove(event){moveAt(event.pageX - shiftX, event.pageY - shiftY);}
+	moveAt(event.clientX - shiftX, event.clientY - shiftY)
+	function onMouseMove(event){moveAt(event.clientX - shiftX, event.clientY - shiftY);}
 	document.addEventListener('mousemove', onMouseMove);
 	this.onmouseup = function() {
 		document.removeEventListener('mousemove', onMouseMove);
@@ -53,8 +53,8 @@ target[3].onmousedown = function(event)
 	var shiftX = event.clientX - this.getBoundingClientRect().left;
 	var shiftY = event.clientY - this.getBoundingClientRect().top;
 
-	moveAt(event.pageX - shiftX, event.pageY - shiftY)
-	function onMouseMove(event){moveAt(event.pageX - shiftX, event.pageY - shiftY);}
+	moveAt(event.clientX - shiftX, event.clientY - shiftY)
+	function onMouseMove(event){moveAt(event.clientX - shiftX, event.clientY - shiftY);}
 	document.addEventListener('mousemove', onMouseMove);
 	this.onmouseup = function(){
 		document.removeEventListener('mousemove', onMouseMove);
@@ -67,8 +67,8 @@ target[4].onmousedown = function(event)
 	var shiftX = event.clientX - this.getBoundingClientRect().left;
 	var shiftY = event.clientY - this.getBoundingClientRect().top;
 
-	moveAt(event.pageX - shiftX, event.pageY - shiftY)
-	function onMouseMove(event){moveAt(event.pageX - shiftX, event.pageY - shiftY);}
+	moveAt(event.clientX - shiftX, event.clientY - shiftY)
+	function onMouseMove(event){moveAt(event.clientX - shiftX, event.clientY - shiftY);}
 	document.addEventListener('mousemove', onMouseMove);
 	this.onmouseup = function(){
 		document.removeEventListener('mousemove', onMouseMove);
@@ -81,8 +81,8 @@ target[5].onmousedown = function(event)
 	var shiftX = event.clientX - this.getBoundingClientRect().left;
 	var shiftY = event.clientY - this.getBoundingClientRect().top;
 
-	moveAt(event.pageX - shiftX, event.pageY - shiftY)
-	function onMouseMove(event){moveAt(event.pageX - shiftX, event.pageY - shiftY);}
+	moveAt(event.clientX - shiftX, event.clientY - shiftY)
+	function onMouseMove(event){moveAt(event.clientX - shiftX, event.clientY - shiftY);}
 	document.addEventListener('mousemove', onMouseMove);
 	this.onmouseup = function(){
 		document.removeEventListener('mousemove', onMouseMove);
@@ -100,16 +100,16 @@ target[5].ondragstart = function(){return false;};
 
 function moveAt(pageX, pageY)
 {
-	target[0].style.left = pageX + 'px';
-	target[0].style.top = pageY + 'px';
-	target[1].style.left = pageX + 'px';
-	target[1].style.top = pageY + 'px';
-	target[2].style.left = pageX + 'px';
-	target[2].style.top = pageY + 'px';
-	target[3].style.left = pageX + 'px';
-	target[3].style.top = pageY + 'px';
-	target[4].style.left = pageX + 'px';
-	target[4].style.top = pageY + 'px';
-	target[5].style.left = pageX + 'px';
-	target[5].style.top = pageY + 'px';
+	target[0].style.left = clientX + 'px';
+	target[0].style.top = clientY + 'px';
+	target[1].style.left = clientX + 'px';
+	target[1].style.top = clientY + 'px';
+	target[2].style.left = clientX + 'px';
+	target[2].style.top = clientY + 'px';
+	target[3].style.left = clientX + 'px';
+	target[3].style.top = clientY + 'px';
+	target[4].style.left = clientX + 'px';
+	target[4].style.top = clientY + 'px';
+	target[5].style.left = clientX + 'px';
+	target[5].style.top = clientY + 'px';
 }
