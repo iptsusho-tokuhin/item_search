@@ -41,6 +41,10 @@ input {
   transform: scale(0.8);
 }
 
+textarea {
+  font-size: 1.0em;	
+}
+
 .tytle{
 	font-size:	1.5em;
 }
