@@ -12,7 +12,7 @@
 			{
 				if(data[i][j] == '0')				{text = '';}
 				else						{text = data[i][j];}
-				if(j != 0 && i % 5 == 1 && data[i + 1][j] != '0'){text = data[i][j] + '(' + data[i + 1][j] + ')';}
+				if(j != 0 && i % 11 == 1 && data[i + 1][j] != '0'){text = data[i][j] + '(' + data[i + 1][j] + ')';}
 				var obj = '<td onclick=click_table(this) onmouseover=display_note(this) onmouseout=hidden_note() nowrap>' + text + '</td>';
 				row.insertAdjacentHTML('beforeend',obj);
 			}
@@ -20,7 +20,7 @@
 	}
 	
 	var sum = [];
-	for(var i = 0; i <= 4; i++)		//合計データ初期化
+	for(var i = 0; i < 11; i++)		//合計データ初期化
 	{
 		sum[i] = [];
 		for(var j = 0; j < data[i].length; j++)
@@ -29,16 +29,23 @@
 		}
 	}
 
-	sum[0][0] = '馬房数合計';
-	sum[1][0] = '馬房組立数合計';
-	sum[2][0] = 'サイドパネル合計';
-	sum[3][0] = 'バックパネル合計';
-	sum[4][0] = 'フロントパネル合計';
+	sum[0][0] = '馬房数 合計';
+	sum[1][0] = '馬房組立数 合計';
+	sum[2][0] = 'サイドパネル 合計';
+	sum[3][0] = 'バックパネル 合計';
+	sum[4][0] = 'フロントパネル 合計';
+	
+	sum[5][0] = 'ツマ・１・オス 合計';
+	sum[6][0] = 'ツマ・１・メス 合計';
+	sum[7][0] = 'ツマ・２・オス 合計';
+	sum[8][0] = 'ツマ・２・メス 合計';
+	sum[9][0] = 'テント・２ 合計';
+	sum[10][0] = 'テント・３ 合計';
 
 	for(var i = 1; i < data.length; i++)	//合計データ作成
 	{
-		var n = i % 5 - 1;
-		if(n < 0){n = 4;}
+		var n = i % 11 - 1;
+		if(n < 0){n = 10;}
 		for(var j = 1; j < data[i].length; j++)
 		{
 			sum[n][j] = Number(sum[n][j]) + Number(data[i][j]);
@@ -68,9 +75,9 @@
 	{
 		table.rows[i].cells[0].style.position = 'sticky';//1列目を固定
 		table.rows[i].cells[0].style.left = '0px';
-		if(i < table.rows.length - 4 && i != 0)
+		if(i < table.rows.length - 10 && i != 0)
 		{
-			if(i % 5 == 1)	{table.rows[i].style.cursor = 'pointer';}//クリックできるようにする
+			if(i % 11 == 1)	{table.rows[i].style.cursor = 'pointer';}//クリックできるようにする
 			else		{table.rows[i].style.display = 'none';}	//隠す
 		}
 		
@@ -90,7 +97,7 @@ function set_table_color()			//セルの色を設定
 		for(var j = 0; j < table.rows[i].cells.length; j++)
 		{
 			if(i == 0)		{cl = 'date';}
-			else if(i % 5 == 1)	{cl = 'stable';}
+			else if(i % 11 == 1)	{cl = 'stable';}
 			else			{cl = 'parts';}
 			
 			f_co = 'black';
@@ -110,7 +117,7 @@ function set_table_color()			//セルの色を設定
 
 			if(i > table.rows.length - 5)
 			{
-				if(i % 5 == 1)	{cl = 'sum_stable';}
+				if(i % 11 == 1)	{cl = 'sum_stable';}
 				else		{cl = 'sum_parts';}
 			}
 			if(table.rows[i].cells[j].innerHTML.indexOf(')') > 0){cl = 'stable2'}//組立馬房なら
@@ -144,7 +151,7 @@ function click_table(e)
 
 	var cl = table.rows[row].className;
 
-	if(row % 5 == 1 && row < table.rows.length - 5)
+	if(row % 11 == 1 && row < table.rows.length - 11)
 	{
 		if(column == 0)
 		{
@@ -153,12 +160,24 @@ function click_table(e)
 				table.rows[row + 2].style.display = '';
 				table.rows[row + 3].style.display = '';
 				table.rows[row + 4].style.display = '';
+				table.rows[row + 5].style.display = '';
+				table.rows[row + 6].style.display = '';
+				table.rows[row + 7].style.display = '';
+				table.rows[row + 8].style.display = '';
+				table.rows[row + 9].style.display = '';
+				table.rows[row + 10].style.display = '';
 			}
 			else
 			{
 				table.rows[row + 2].style.display = 'none';
 				table.rows[row + 3].style.display = 'none';
 				table.rows[row + 4].style.display = 'none';
+				table.rows[row + 5].style.display = 'none';
+				table.rows[row + 6].style.display = 'none';
+				table.rows[row + 7].style.display = 'none';
+				table.rows[row + 8].style.display = 'none';
+				table.rows[row + 9].style.display = 'none';
+				table.rows[row + 10].style.display = 'none';
 			}
 		}
 		else
