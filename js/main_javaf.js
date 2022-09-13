@@ -411,7 +411,7 @@ function set_select()				//select（顧客）を再設定
 		select[i].innerHTML = '';
 		for(var j = 0; j < data.length; j++)//データ出力
 		{
-			if(j % 5 == 1)
+			if(j % 11 == 1)
 			{
 				const op = document.createElement('option');	//option要素を新しく作る
 				op.value = j;					//option要素にvalueと表示名を設定
