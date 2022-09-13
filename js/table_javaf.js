@@ -115,7 +115,7 @@ function set_table_color()			//セルの色を設定
 			}
 			
 
-			if(i > table.rows.length - 10)
+			if(i > table.rows.length - 11)
 			{
 				if(i % 11 == 1)	{cl = 'sum_stable';}
 				else		{cl = 'sum_parts';}
