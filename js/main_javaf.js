@@ -325,7 +325,8 @@ function menu_open(column,row)		//移動・組立・解体メニューの選択�
 	menu_close();
 	document.getElementById('select').style.display = 'block';
 
-	var date = data[0][column].replace(/(\d+)\/(\d+)\/(\d+)/g,'$1-$2-$3');
+	//var date = data[0][column].replace(/(\d+)\/(\d+)\/(\d+)/g,'$1-$2-$3');
+	var date = table.rows[0].cells[column].replace(/(\d+)\/(\d+)\/(\d+)/g,'$1-$2-$3');
 	for(var i = 0; i <= 2; i++){elm[i][0].value = date;}
 
 	for(var i = 3; i <= 6; i++){elm[0][i].value = 0;}
