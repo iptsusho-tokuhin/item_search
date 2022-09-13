@@ -525,7 +525,7 @@ function set_max()			//移動・組立・解体可能な最大値を設定
 	re_set_num(1,2);
 	re_set_num(2,2);
 
-	for(var i = 3; i <= 6; i++){elm[0][i + 4].innerHTML = '最大：' + elm[0][i].max;}
+	for(var i = 3; i <= 12; i++){elm[0][i + 10].innerHTML = '最大：' + elm[0][i].max;}
 	elm[1][3].innerHTML = '最大：' + elm[1][2].max;
 	elm[2][3].innerHTML = '最大：' + elm[2][2].max;
 
