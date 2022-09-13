@@ -50,14 +50,28 @@ elm[0][3] = document.getElementById('move_stable');
 elm[0][4] = document.getElementById('move_SP');
 elm[0][5] = document.getElementById('move_BP');
 elm[0][6] = document.getElementById('move_FP');
-elm[0][7] = document.getElementById('max_m_st');
-elm[0][8] = document.getElementById('max_m_sp');
-elm[0][9] = document.getElementById('max_m_bp');
-elm[0][10]= document.getElementById('max_m_fp');
-elm[0][11]= document.getElementById('move_note1_label');
-elm[0][12]= document.getElementById('move_note1');
-elm[0][13]= document.getElementById('move_note2_label');
-elm[0][14]= document.getElementById('move_note2');
+elm[0][7] = document.getElementById('move_ST1M');
+elm[0][8] = document.getElementById('move_ST1F');
+elm[0][9] = document.getElementById('move_ST2M');
+elm[0][10] = document.getElementById('move_ST2F');
+elm[0][11] = document.getElementById('move_MT2');
+elm[0][12] = document.getElementById('move_MT3');
+
+elm[0][13] = document.getElementById('max_m_st');
+elm[0][14] = document.getElementById('max_m_sp');
+elm[0][15] = document.getElementById('max_m_bp');
+elm[0][16]= document.getElementById('max_m_fp');
+elm[0][17] = document.getElementById('max_side_tent_1_male');
+elm[0][18] = document.getElementById('max_side_tent_1_female');
+elm[0][19] = document.getElementById('max_side_tent_2_male');
+elm[0][20]= document.getElementById('max_side_tent_2_female');
+elm[0][21] = document.getElementById('max_main_tent_2');
+elm[0][22]= document.getElementById('max_main_tent_3');
+
+elm[0][23]= document.getElementById('move_note1_label');
+elm[0][24]= document.getElementById('move_note1');
+elm[0][25]= document.getElementById('move_note2_label');
+elm[0][26]= document.getElementById('move_note2');
 
 elm[1][0] = document.getElementById('build_date');
 elm[1][1] = document.getElementById('build_select');
@@ -145,6 +159,13 @@ function move_entry()				//厩舎の移動を登録
 	var side_panel	= Number(elm[0][4].value);
 	var back_panel	= Number(elm[0][5].value);
 	var front_panel	= Number(elm[0][6].value);
+	
+	var side_tent_1_male	= Number(elm[0][7].value);
+	var side_tent_1_female 	= Number(elm[0][8].value);
+	var side_tent_2_male	= Number(elm[0][9].value);
+	var side_tent_2_female	= Number(elm[0][10].value);
+	var main_tent_2		= Number(elm[0][11].value);
+	var main_tent_3		= Number(elm[0][12].value);
 
 	if(place1 == 0 || place2 == 0){alert('移動元or移動先が未選択です。');return;}
 	var d;
@@ -158,18 +179,30 @@ function move_entry()				//厩舎の移動を登録
 			data[place1 + 2][i] = String(Number(data[place1 + 2][i]) - side_panel);
 			data[place1 + 3][i] = String(Number(data[place1 + 3][i]) - back_panel);
 			data[place1 + 4][i] = String(Number(data[place1 + 4][i]) - front_panel);
+			data[place1 + 5][i] = String(Number(data[place1 + 5][i]) - side_tent_1_male);
+			data[place1 + 6][i] = String(Number(data[place1 + 6][i]) - side_tent_1_female);
+			data[place1 + 7][i] = String(Number(data[place1 + 7][i]) - side_tent_2_male);
+			data[place1 + 8][i] = String(Number(data[place1 + 8][i]) - side_tent_2_female);
+			data[place1 + 9][i] = String(Number(data[place1 + 9][i]) - main_tent_2);
+			data[place1 + 10][i] = String(Number(data[place1 + 10][i]) - main_tent_3);
 
 			data[place2][i]     = String(Number(data[place2][i]) + stable);
 			data[place2 + 2][i] = String(Number(data[place2 + 2][i]) + side_panel);
 			data[place2 + 3][i] = String(Number(data[place2 + 3][i]) + back_panel);
 			data[place2 + 4][i] = String(Number(data[place2 + 4][i]) + front_panel);
+			data[place2 + 5][i] = String(Number(data[place2 + 5][i]) - side_tent_1_male);
+			data[place2 + 6][i] = String(Number(data[place2 + 6][i]) - side_tent_1_male);
+			data[place2 + 7][i] = String(Number(data[place2 + 7][i]) - side_tent_2_female);
+			data[place2 + 8][i] = String(Number(data[place2 + 8][i]) - side_tent_2_female);
+			data[place2 + 9][i] = String(Number(data[place2 + 9][i]) - main_tent_2);
+			data[place2 + 10][i] = String(Number(data[place2 + 10][i]) - main_tent_3);
 		}
 	}
 
-	var h = convert_date(date) + ' 移動 ' + data[place1][0] + ' → ' + data[place2][0] + ' ' + stable + '馬房 ' + '(SP' + side_panel + '枚・BP' + back_panel + '枚・FP' + front_panel + '枚)';
+	var h = convert_date(date) + ' 移動 ' + data[place1][0] + ' → ' + data[place2][0] + ' ' + stable + '馬房';
 	set_history(h);
-	set_note(place1,elm[0][12].value.replace(/\r?\n/g, '<br>'));
-	set_note(place2,elm[0][14].value.replace(/\r?\n/g, '<br>'));
+	set_note(place1,elm[0][24].value.replace(/\r?\n/g, '<br>'));
+	set_note(place2,elm[0][26].value.replace(/\r?\n/g, '<br>'));
 	
 	export_table();
 	menu_close();
