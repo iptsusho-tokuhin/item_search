@@ -1,4 +1,4 @@
-﻿function export_table()				//テーブルへ出力
+function export_table()				//テーブルへ出力
 {
 	set_date_min_max();
 	table.innerHTML = '';
@@ -115,7 +115,7 @@ function set_table_color()			//セルの色を設定
 			}
 			
 
-			if(i > table.rows.length - 5)
+			if(i > table.rows.length - 10)
 			{
 				if(i % 11 == 1)	{cl = 'sum_stable';}
 				else		{cl = 'sum_parts';}
