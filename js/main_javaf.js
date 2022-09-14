@@ -394,11 +394,11 @@ function up_down(m,n,add)			//馬房数などのアップダウン
 	var num = Number(elm[m][n].value);
 	elm[m][n].value = num + add;
 	includ_stable_change();
-	move_stable_change();
+	if(m == 0 && n == 3){move_stable_change();}
 }
 
 function set_select()				//select（顧客）を再設定
-{
+
 	var select = [];
 	select[0] = elm[0][1];//select要素を取得する
 	select[1] = elm[0][2];//select要素を取得する
