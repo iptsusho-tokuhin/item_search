@@ -393,6 +393,7 @@ function up_down(m,n,add)			//馬房数などのアップダウン
 {
 	var num = Number(elm[m][n].value);
 	elm[m][n].value = num + add;
+	re_set_num(m,n);
 	if(m == 4 && n == 2){includ_stable_change();}
 	if(m == 0 && n == 3){move_stable_change();}
 }
