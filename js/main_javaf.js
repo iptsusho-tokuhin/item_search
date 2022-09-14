@@ -97,6 +97,12 @@ elm[4][2] = document.getElementById('includ_stable');
 elm[4][3] = document.getElementById('includ_SP');
 elm[4][4] = document.getElementById('includ_BP');
 elm[4][5] = document.getElementById('includ_FP');
+elm[4][6] = document.getElementById('includ_ST1M');
+elm[4][7] = document.getElementById('includ_ST1F');
+elm[4][8] = document.getElementById('includ_ST2M');
+elm[4][9] = document.getElementById('includ_ST2F');
+elm[4][10] = document.getElementById('includ_MT2');
+elm[4][11] = document.getElementById('includ_MT3');
 
 var begin_date = document.getElementById('begin_date');
 var end_date = document.getElementById('end_date');
@@ -287,6 +293,13 @@ function includ_entry()			//棚卸を登録
 	var side_panel	= Number(elm[4][3].value);
 	var back_panel	= Number(elm[4][4].value);
 	var front_panel	= Number(elm[4][5].value);
+	
+	var side_tent_1_male	= Number(elm[4][6].value);
+	var side_tent_1_female 	= Number(elm[4][7].value);
+	var side_tent_2_male	= Number(elm[4][8].value);
+	var side_tent_2_female	= Number(elm[4][9].value);
+	var main_tent_2		= Number(elm[4][10].value);
+	var main_tent_3		= Number(elm[4][11].value);
 
 	if(place == 0){alert('入出荷場所が未選択です。');return;}
 	var d;
@@ -300,13 +313,20 @@ function includ_entry()			//棚卸を登録
 			data[place + 2][i] = String(Number(data[place + 2][i]) + side_panel);
 			data[place + 3][i] = String(Number(data[place + 3][i]) + back_panel);
 			data[place + 4][i] = String(Number(data[place + 4][i]) + front_panel);
+			
+			data[place + 5][i] = String(Number(data[place + 5][i]) + side_tent_1_male);
+			data[place + 6][i] = String(Number(data[place + 6][i]) + side_tent_1_female);
+			data[place + 7][i] = String(Number(data[place + 7][i]) + side_tent_2_male);
+			data[place + 8][i] = String(Number(data[place + 8][i]) + side_tent_2_female);
+			data[place + 9][i] = String(Number(data[place + 9][i]) + main_tent_2);
+			data[place + 10][i] = String(Number(data[place + 10][i]) + main_tent_3	);
 		}
 	}
 
 	export_table();
 	menu_close();
 
-	var h = convert_date(date) + ' 棚卸 ' + data[place][0] + ' ' + stable + '馬房 ' + '(SP' + side_panel + '枚・BP' + back_panel + '枚・FP' + front_panel + '枚)';
+	var h = convert_date(date) + ' 棚卸 ' + data[place][0] + ' ' + stable + '馬房';
 	set_history(h);
 }
 
