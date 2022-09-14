@@ -529,13 +529,13 @@ function set_max()			//移動・組立・解体可能な最大値を設定
 	elm[1][3].innerHTML = '最大：' + elm[1][2].max;
 	elm[2][3].innerHTML = '最大：' + elm[2][2].max;
 
-	elm[0][11].innerHTML = data[row[0]][0];
-	elm[0][13].innerHTML = data[row[1]][0];
+	elm[0][23].innerHTML = data[row[0]][0];
+	elm[0][25].innerHTML = data[row[1]][0];
 	elm[1][4].innerHTML = data[row[2]][0];
 	elm[2][4].innerHTML = data[row[3]][0];
 
-	elm[0][12].value = road_note(row[0]).replace(/<br>/g, "\n");
-	elm[0][14].value = road_note(row[1]).replace(/<br>/g, "\n");
+	elm[0][24].value = road_note(row[0]).replace(/<br>/g, "\n");
+	elm[0][26].value = road_note(row[1]).replace(/<br>/g, "\n");
 	elm[1][5].value = road_note(row[2]).replace(/<br>/g, "\n");
 	elm[2][5].value = road_note(row[3]).replace(/<br>/g, "\n");
 
