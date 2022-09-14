@@ -502,7 +502,7 @@ function set_max()			//移動・組立・解体可能な最大値を設定
 	row[2] = Number(elm[1][1].value);	//場所のvalue = tableのrow
 	row[3] = Number(elm[2][1].value);	//場所のvalue = tableのrow
 
-	for(var i = 3; i <= 6; i++){elm[0][i].min = 0;}
+	for(var i = 3; i <= 12; i++){elm[0][i].min = 0;}
 	elm[1][2].min = 0;
 	elm[2][2].min = 0;
 
@@ -545,8 +545,6 @@ function set_max()			//移動・組立・解体可能な最大値を設定
 	elm[0][26].value = road_note(row[1]).replace(/<br>/g, "\n");
 	elm[1][5].value = road_note(row[2]).replace(/<br>/g, "\n");
 	elm[2][5].value = road_note(row[3]).replace(/<br>/g, "\n");
-
-
 }
 
 function re_set_num(m,n)
