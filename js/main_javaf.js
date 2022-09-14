@@ -509,7 +509,7 @@ function set_max()			//移動・組立・解体可能な最大値を設定
 
 	if(row[0] == 0)
 	{
-		for(var i = 3; i <= 6; i++){elm[0][i].max = 0;}
+		for(var i = 3; i <= 12; i++){elm[0][i].max = 0;}
 	}
 	else
 	{
