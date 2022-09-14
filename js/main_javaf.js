@@ -198,7 +198,7 @@ function move_entry()				//厩舎の移動を登録
 			data[place2 + 4][i] = String(Number(data[place2 + 4][i]) + front_panel);
 			data[place2 + 5][i] = String(Number(data[place2 + 5][i]) + side_tent_1_male);
 			data[place2 + 6][i] = String(Number(data[place2 + 6][i]) + side_tent_1_female);
-			data[place2 + 7][i] = String(Number(data[place2 + 7][i]) + side_tent_2_male;
+			data[place2 + 7][i] = String(Number(data[place2 + 7][i]) + side_tent_2_male);
 			data[place2 + 8][i] = String(Number(data[place2 + 8][i]) + side_tent_2_female);
 			data[place2 + 9][i] = String(Number(data[place2 + 9][i]) + main_tent_2);
 			data[place2 + 10][i] = String(Number(data[place2 + 10][i]) + main_tent_3);
