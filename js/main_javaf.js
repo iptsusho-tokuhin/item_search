@@ -196,12 +196,12 @@ function move_entry()				//厩舎の移動を登録
 			data[place2 + 2][i] = String(Number(data[place2 + 2][i]) + side_panel);
 			data[place2 + 3][i] = String(Number(data[place2 + 3][i]) + back_panel);
 			data[place2 + 4][i] = String(Number(data[place2 + 4][i]) + front_panel);
-			data[place2 + 5][i] = String(Number(data[place2 + 5][i]) - side_tent_1_male);
-			data[place2 + 6][i] = String(Number(data[place2 + 6][i]) - side_tent_1_male);
-			data[place2 + 7][i] = String(Number(data[place2 + 7][i]) - side_tent_2_female);
-			data[place2 + 8][i] = String(Number(data[place2 + 8][i]) - side_tent_2_female);
-			data[place2 + 9][i] = String(Number(data[place2 + 9][i]) - main_tent_2);
-			data[place2 + 10][i] = String(Number(data[place2 + 10][i]) - main_tent_3);
+			data[place2 + 5][i] = String(Number(data[place2 + 5][i]) + side_tent_1_male);
+			data[place2 + 6][i] = String(Number(data[place2 + 6][i]) + side_tent_1_female);
+			data[place2 + 7][i] = String(Number(data[place2 + 7][i]) + side_tent_2_male;
+			data[place2 + 8][i] = String(Number(data[place2 + 8][i]) + side_tent_2_female);
+			data[place2 + 9][i] = String(Number(data[place2 + 9][i]) + main_tent_2);
+			data[place2 + 10][i] = String(Number(data[place2 + 10][i]) + main_tent_3);
 		}
 	}
 
@@ -319,7 +319,7 @@ function includ_entry()			//棚卸を登録
 			data[place + 7][i] = String(Number(data[place + 7][i]) + side_tent_2_male);
 			data[place + 8][i] = String(Number(data[place + 8][i]) + side_tent_2_female);
 			data[place + 9][i] = String(Number(data[place + 9][i]) + main_tent_2);
-			data[place + 10][i] = String(Number(data[place + 10][i]) + main_tent_3	);
+			data[place + 10][i] = String(Number(data[place + 10][i]) + main_tent_3);
 		}
 	}
 
