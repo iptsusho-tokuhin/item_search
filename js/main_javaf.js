@@ -470,7 +470,7 @@ function display_note(e)			//備考を表示
 	const column = e.cellIndex;//列番号
 	const tr = e.parentNode;
 	const row = tr.sectionRowIndex;//行番号
-	if(row % 5 == 1 && row < table.rows.length - 5)
+	if(row % 11 == 1 && row < table.rows.length - 11)
 	{
 		document.getElementById('note').style.display = 'block';
 
