@@ -516,12 +516,19 @@ function set_max()			//移動・組立・解体可能な最大値を設定
 		elm[0][4].max = search_max(row[0] + 2,date[0],1);//maxを探る
 		elm[0][5].max = search_max(row[0] + 3,date[0],1);//maxを探る
 		elm[0][6].max = search_max(row[0] + 4,date[0],1);//maxを探る
+		
+		elm[0][7].max = search_max(row[0] + 5,date[0],1);//maxを探る
+		elm[0][8].max = search_max(row[0] + 6,date[0],1);//maxを探る
+		elm[0][9].max = search_max(row[0] + 7,date[0],1);//maxを探る
+		elm[0][10].max = search_max(row[0] + 8,date[0],1);//maxを探る
+		elm[0][11].max = search_max(row[0] + 9,date[0],1);//maxを探る
+		elm[0][12].max = search_max(row[0] + 10,date[0],1);//maxを探る
 	}
 
 	elm[1][2].max = search_max(row[2]    ,date[1],0);	//maxを探る
 	elm[2][2].max = search_max(row[3] + 1,date[2],1);	//maxを探る
 
-	for(var i = 3; i <= 6; i++){re_set_num(0,i);}
+	for(var i = 3; i <= 12; i++){re_set_num(0,i);}
 	re_set_num(1,2);
 	re_set_num(2,2);
 
