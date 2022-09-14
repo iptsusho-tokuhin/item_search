@@ -453,10 +453,10 @@ function set_note(row,text)			//備考を書き込み
 
 function road_note(row)				//備考を読み込み
 {
-	if(row % 5 == 1)
+	if(row % 11 == 1)
 	{
 		var text;
-		var n = Math.floor(row / 5);
+		var n = Math.floor(row / 11);
 		return note[n];
 	}
 	else
