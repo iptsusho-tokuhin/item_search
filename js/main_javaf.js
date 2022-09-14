@@ -329,7 +329,7 @@ function menu_open(column,row)		//移動・組立・解体メニューの選択�
 	var date = table.rows[0].cells[column].innerHTML.replace(/(\d+)\/(\d+)\/(\d+)/g,'$1-$2-$3');
 	for(var i = 0; i <= 2; i++){elm[i][0].value = date;}
 
-	for(var i = 3; i <= 6; i++){elm[0][i].value = 0;}
+	for(var i = 3; i <= 12; i++){elm[0][i].value = 0;}
 
 	elm[1][2].value = 0;
 	elm[2][2].value = 0;
@@ -339,7 +339,7 @@ function menu_open(column,row)		//移動・組立・解体メニューの選択�
 	elm[1][1].value = row;
 	elm[2][1].value = row;
 	
-	elm[0][14].value = road_note(row);
+	elm[0][26].value = road_note(row);
 	elm[1][5].value = road_note(row);
 	elm[2][5].value = road_note(row);
 
