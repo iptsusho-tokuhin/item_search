@@ -402,6 +402,7 @@ function menu_select(n)			//移動・組立・解体・顧客追加・棚卸の�
 		menu_close();
 		elm[4][0].value = convert_date(new Date()).replace(/(\d+)\/(\d+)\/(\d+)/g,'$1-$2-$3');
 		elm[4][1].value = '1';
+		for(var i = 2; i <= 11; i++){elm[4][i].min = 0;}
 		document.getElementById('includ').style.display = 'block';break;
   		default:
 	}
