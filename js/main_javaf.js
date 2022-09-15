@@ -379,7 +379,6 @@ function menu_close()			//メニューを閉じる
 	{
 		for(var j = 0; j < elm[i].length; j++)//データ出力
 		{
-			alert(i+","+j);
 			elm[i][j].value = '';
 		}
 	}
