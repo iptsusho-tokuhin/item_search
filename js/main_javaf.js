@@ -261,15 +261,34 @@ function customer_entry(f)			//新規顧客を登録
 		var arry3 = ['サイドパネル',	'0'];
 		var arry4 = ['バックパネル',	'0'];
 		var arry5 = ['フロントパネル',	'0'];
+		var arry6 = ['ツマ・１・オス',	'0'];
+		var arry7 = ['ツマ・１・メス',	'0'];
+		var arry8 = ['ツマ・２・オス',	'0'];
+		var arry9 = ['ツマ・２・メス',	'0'];
+		var arry10 = ['テント・２',	'0'];
+		var arry11 = ['テント・３',	'0'];
 
 		data.push(arry1);
 		data.push(arry2);
 		data.push(arry3);
 		data.push(arry4);
 		data.push(arry5);
+		data.push(arry6);
+		data.push(arry7);
+		data.push(arry8);
+		data.push(arry9);
+		data.push(arry10);	
+		data.push(arry11);
+		
 		note.push('');
 		for(var i = 1; i < data[0].length; i++)
 		{
+			data[data.length-11][i] = '0';
+			data[data.length-10][i] = '0';
+			data[data.length-9][i] = '0';
+			data[data.length-8][i] = '0';
+			data[data.length-7][i] = '0';
+			data[data.length-6][i] = '0';
 			data[data.length-5][i] = '0';
 			data[data.length-4][i] = '0';
 			data[data.length-3][i] = '0';
