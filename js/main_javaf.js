@@ -673,6 +673,8 @@ function set_date_min_max()//表示日の最大最小
 	elm[1][0].max = end_date.value;
 	elm[2][0].min = begin_date.value;
 	elm[2][0].max = end_date.value;
+	elm[4][0].min = begin_date.value;
+	elm[4][0].max = end_date.value;
 }
 
 function delete_taboo(e)//禁止文字を削除
