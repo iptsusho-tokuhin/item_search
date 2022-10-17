@@ -1,36 +1,3 @@
-//var data = [
-//['日付',		'2022/01/01'],
-//['本社',		'100'],
-//['馬房数',		'0'],
-//['サイドパネル',	'110'],
-//['バックパネル',	'100'],
-//['フロントパネル',	'100'],
-
-//['美浦',		'100'],
-//['馬房数',		'0'],
-//['サイドパネル',	'110'],
-//['バックパネル',	'100'],
-//['フロントパネル',	'100'],
-
-//['A乗馬クラブ',		'0'],
-//['馬房数',		'0'],
-//['サイドパネル',	'0'],
-//['バックパネル',	'0'],
-//['フロントパネル',	'0'],
-
-//['B乗馬クラブ',		'0'],
-//['馬房数',		'0'],
-//['サイドパネル',	'0'],
-//['バックパネル',	'0'],
-//['フロントパネル',	'0'],
-
-//['C乗馬クラブ',		'0'],
-//['馬房数',		'0'],
-//['サイドパネル',	'0'],
-//['バックパネル',	'0'],
-//['フロントパネル',	'0']
-//];
-
 var data= [];
 var note= []; //= ['本社です','美浦事務所です','〇月〇日 20馬房予定','〇月〇日 まで30馬房','10月工事予定'];
 var his= []; //= [];
@@ -46,32 +13,36 @@ elm[4] = [];
 elm[0][0] = document.getElementById('move_date');
 elm[0][1] = document.getElementById('move_select1');
 elm[0][2] = document.getElementById('move_select2');
-elm[0][3] = document.getElementById('move_stable');
-elm[0][4] = document.getElementById('move_SP');
-elm[0][5] = document.getElementById('move_BP');
-elm[0][6] = document.getElementById('move_FP');
-elm[0][7] = document.getElementById('move_ST1M');
-elm[0][8] = document.getElementById('move_ST1F');
-elm[0][9] = document.getElementById('move_ST2M');
-elm[0][10] = document.getElementById('move_ST2F');
-elm[0][11] = document.getElementById('move_MT2');
-elm[0][12] = document.getElementById('move_MT3');
+elm[0][3] = document.getElementById('move_bunch12');
+elm[0][4] = document.getElementById('move_bunch13');
+elm[0][5] = document.getElementById('move_stable');
+elm[0][6] = document.getElementById('move_SP');
+elm[0][7] = document.getElementById('move_BP');
+elm[0][8] = document.getElementById('move_FP');
+elm[0][9] = document.getElementById('move_ST1M');
+elm[0][10] = document.getElementById('move_ST1F');
+elm[0][11] = document.getElementById('move_ST2M');
+elm[0][12] = document.getElementById('move_ST2F');
+elm[0][13] = document.getElementById('move_MT2');
+elm[0][14] = document.getElementById('move_MT3');
 
-elm[0][13] = document.getElementById('max_m_st');
-elm[0][14] = document.getElementById('max_m_sp');
-elm[0][15] = document.getElementById('max_m_bp');
-elm[0][16]= document.getElementById('max_m_fp');
-elm[0][17] = document.getElementById('max_side_tent_1_male');
-elm[0][18] = document.getElementById('max_side_tent_1_female');
-elm[0][19] = document.getElementById('max_side_tent_2_male');
-elm[0][20]= document.getElementById('max_side_tent_2_female');
-elm[0][21] = document.getElementById('max_main_tent_2');
-elm[0][22]= document.getElementById('max_main_tent_3');
+elm[0][15] = document.getElementById('max_m_12');
+elm[0][16] = document.getElementById('max_m_13');
+elm[0][17] = document.getElementById('max_m_st');
+elm[0][18] = document.getElementById('max_m_sp');
+elm[0][19] = document.getElementById('max_m_bp');
+elm[0][20]= document.getElementById('max_m_fp');
+elm[0][21] = document.getElementById('max_side_tent_1_male');
+elm[0][22] = document.getElementById('max_side_tent_1_female');
+elm[0][23] = document.getElementById('max_side_tent_2_male');
+elm[0][24]= document.getElementById('max_side_tent_2_female');
+elm[0][25] = document.getElementById('max_main_tent_2');
+elm[0][26]= document.getElementById('max_main_tent_3');
 
-elm[0][23]= document.getElementById('move_note1_label');
-elm[0][24]= document.getElementById('move_note1');
-elm[0][25]= document.getElementById('move_note2_label');
-elm[0][26]= document.getElementById('move_note2');
+elm[0][27]= document.getElementById('move_note1_label');
+elm[0][28]= document.getElementById('move_note1');
+elm[0][29]= document.getElementById('move_note2_label');
+elm[0][30]= document.getElementById('move_note2');
 
 elm[1][0] = document.getElementById('build_date');
 elm[1][1] = document.getElementById('build_select');
@@ -161,17 +132,17 @@ function move_entry()				//厩舎の移動を登録
 	var date	= new Date(elm[0][0].value);
 	var place1 	= Number(elm[0][1].value);
 	var place2 	= Number(elm[0][2].value);
-	var stable	= Number(elm[0][3].value);
-	var side_panel	= Number(elm[0][4].value);
-	var back_panel	= Number(elm[0][5].value);
-	var front_panel	= Number(elm[0][6].value);
+	var stable	= Number(elm[0][4].value);
+	var side_panel	= Number(elm[0][5].value);
+	var back_panel	= Number(elm[0][6].value);
+	var front_panel	= Number(elm[0][7].value);
 	
-	var side_tent_1_male	= Number(elm[0][7].value);
-	var side_tent_1_female 	= Number(elm[0][8].value);
-	var side_tent_2_male	= Number(elm[0][9].value);
-	var side_tent_2_female	= Number(elm[0][10].value);
-	var main_tent_2		= Number(elm[0][11].value);
-	var main_tent_3		= Number(elm[0][12].value);
+	var side_tent_1_male	= Number(elm[0][8].value);
+	var side_tent_1_female 	= Number(elm[0][9].value);
+	var side_tent_2_male	= Number(elm[0][10].value);
+	var side_tent_2_female	= Number(elm[0][11].value);
+	var main_tent_2		= Number(elm[0][12].value);
+	var main_tent_3		= Number(elm[0][13].value);
 
 	if(place1 == 0 || place2 == 0){alert('移動元or移動先が未選択です。');return;}
 	var d;
@@ -207,8 +178,8 @@ function move_entry()				//厩舎の移動を登録
 
 	var h = convert_date(date) + ' 移動 ' + data[place1][0] + ' → ' + data[place2][0] + ' ' + stable + '馬房';
 	set_history(h);
-	set_note(place1,elm[0][24].value.replace(/\r?\n/g, '<br>'));
-	set_note(place2,elm[0][26].value.replace(/\r?\n/g, '<br>'));
+	set_note(place1,elm[0][28].value.replace(/\r?\n/g, '<br>'));
+	set_note(place2,elm[0][30].value.replace(/\r?\n/g, '<br>'));
 	
 	export_table();
 	menu_close();
@@ -378,7 +349,7 @@ function menu_open(column,row)		//移動・組立・解体メニューの選択�
 	elm[1][1].value = row;
 	elm[2][1].value = row;
 	
-	elm[0][26].value = road_note(row);
+	elm[0][30].value = road_note(row);
 	elm[1][5].value = road_note(row);
 	elm[2][5].value = road_note(row);
 
@@ -553,17 +524,20 @@ function set_max()			//移動・組立・解体可能な最大値を設定
 	}
 	else
 	{
-		elm[0][3].max = search_max(row[0]    ,date[0],0);//maxを探る
-		elm[0][4].max = search_max(row[0] + 2,date[0],1);//maxを探る
-		elm[0][5].max = search_max(row[0] + 3,date[0],1);//maxを探る
-		elm[0][6].max = search_max(row[0] + 4,date[0],1);//maxを探る
+		elm[0][5].max = search_max(row[0]    ,date[0],0);//maxを探る
+		elm[0][6].max = search_max(row[0] + 2,date[0],1);//maxを探る
+		elm[0][7].max = search_max(row[0] + 3,date[0],1);//maxを探る
+		elm[0][8].max = search_max(row[0] + 4,date[0],1);//maxを探る
 		
-		elm[0][7].max = search_max(row[0] + 5,date[0],1);//maxを探る
-		elm[0][8].max = search_max(row[0] + 6,date[0],1);//maxを探る
-		elm[0][9].max = search_max(row[0] + 7,date[0],1);//maxを探る
-		elm[0][10].max = search_max(row[0] + 8,date[0],1);//maxを探る
-		elm[0][11].max = search_max(row[0] + 9,date[0],1);//maxを探る
-		elm[0][12].max = search_max(row[0] + 10,date[0],1);//maxを探る
+		elm[0][3] = Math.ceil(elm[0][5].max / 4) ;
+		elm[0][4] = Math.ceil(elm[0][5].max / 4) ;
+		
+		elm[0][9].max = search_max(row[0] + 5,date[0],1);//maxを探る
+		elm[0][10].max = search_max(row[0] + 6,date[0],1);//maxを探る
+		elm[0][11].max = search_max(row[0] + 7,date[0],1);//maxを探る
+		elm[0][12].max = search_max(row[0] + 8,date[0],1);//maxを探る
+		elm[0][13].max = search_max(row[0] + 9,date[0],1);//maxを探る
+		elm[0][14].max = search_max(row[0] + 10,date[0],1);//maxを探る
 	}
 
 	elm[1][2].max = search_max(row[2]    ,date[1],0);	//maxを探る
@@ -573,17 +547,17 @@ function set_max()			//移動・組立・解体可能な最大値を設定
 	re_set_num(1,2);
 	re_set_num(2,2);
 
-	for(var i = 3; i <= 12; i++){elm[0][i + 10].innerHTML = '最大：' + elm[0][i].max;}
+	for(var i = 3; i <= 14; i++){elm[0][i + 12].innerHTML = '最大：' + elm[0][i].max;}
 	elm[1][3].innerHTML = '最大：' + elm[1][2].max;
 	elm[2][3].innerHTML = '最大：' + elm[2][2].max;
 
-	elm[0][23].innerHTML = data[row[0]][0];
-	elm[0][25].innerHTML = data[row[1]][0];
+	elm[0][27].innerHTML = data[row[0]][0];
+	elm[0][29].innerHTML = data[row[1]][0];
 	elm[1][4].innerHTML = data[row[2]][0];
 	elm[2][4].innerHTML = data[row[3]][0];
 
-	elm[0][24].value = road_note(row[0]).replace(/<br>/g, "\n");
-	elm[0][26].value = road_note(row[1]).replace(/<br>/g, "\n");
+	elm[0][28].value = road_note(row[0]).replace(/<br>/g, "\n");
+	elm[0][30].value = road_note(row[1]).replace(/<br>/g, "\n");
 	elm[1][5].value = road_note(row[2]).replace(/<br>/g, "\n");
 	elm[2][5].value = road_note(row[3]).replace(/<br>/g, "\n");
 }
@@ -601,12 +575,12 @@ function re_set_num(m,n)
 function move_stable_change()			//移動する馬房数に合わせてパネル数を自動計算（20馬房1棟計算）
 {
 	re_set_num(0,3);
-	var st = Number(elm[0][3].value);
+	var st = Number(elm[0][5].value);
 	var sp = st + Math.ceil(st / 20) * 2 ;
-	elm[0][4].value = sp;
-	elm[0][5].value = st;
-	elm[0][6].value = st;
-	for(var i = 4; i <= 6; i++){re_set_num(0,i);}
+	elm[0][6].value = sp;
+	elm[0][7].value = st;
+	elm[0][8].value = st;
+	for(var i = 6; i <= 8; i++){re_set_num(0,i);}
 }
 
 function includ_stable_change()			//移動する馬房数に合わせてパネル数を自動計算（20馬房1棟計算）
