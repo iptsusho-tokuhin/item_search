@@ -406,7 +406,7 @@ function up_down(m,n,add)			//馬房数などのアップダウン
 	elm[m][n].value = num + add;
 	re_set_num(m,n);
 	if(m == 4 && n == 2){includ_stable_change();}
-	if(m == 0 && n == 3){move_stable_change();}
+	if(m == 0 && n =< 5){move_stable_change();}
 }
 
 function set_select()				//select（顧客）を再設定
@@ -529,8 +529,8 @@ function set_max()			//移動・組立・解体可能な最大値を設定
 		elm[0][7].max = search_max(row[0] + 3,date[0],1);//maxを探る
 		elm[0][8].max = search_max(row[0] + 4,date[0],1);//maxを探る
 		
-		elm[0][3] = Math.ceil(elm[0][5].max / 4) ;
-		elm[0][4] = Math.ceil(elm[0][5].max / 4) ;
+		elm[0][3] = Math.ceil(Number(elm[0][5].max) / 4) ;
+		elm[0][4] = Math.ceil(Number(elm[0][5].max) / 4) ;
 		
 		elm[0][9].max = search_max(row[0] + 5,date[0],1);//maxを探る
 		elm[0][10].max = search_max(row[0] + 6,date[0],1);//maxを探る
