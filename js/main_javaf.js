@@ -406,7 +406,7 @@ function up_down(m,n,add)			//馬房数などのアップダウン
 	elm[m][n].value = num + add;
 	re_set_num(m,n);
 	if(m == 4 && n == 2){includ_stable_change();}
-	if(m == 0 && n =< 5){move_stable_change();}
+	if(m == 0 && n <= 5){move_stable_change();}
 }
 
 function set_select()				//select（顧客）を再設定
