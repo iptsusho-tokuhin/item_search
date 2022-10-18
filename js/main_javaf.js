@@ -132,17 +132,17 @@ function move_entry()				//厩舎の移動を登録
 	var date	= new Date(elm[0][0].value);
 	var place1 	= Number(elm[0][1].value);
 	var place2 	= Number(elm[0][2].value);
-	var stable	= Number(elm[0][4].value);
-	var side_panel	= Number(elm[0][5].value);
-	var back_panel	= Number(elm[0][6].value);
-	var front_panel	= Number(elm[0][7].value);
+	var stable	= Number(elm[0][5].value);
+	var side_panel	= Number(elm[0][6].value);
+	var back_panel	= Number(elm[0][7].value);
+	var front_panel	= Number(elm[0][8].value);
 	
-	var side_tent_1_male	= Number(elm[0][8].value);
-	var side_tent_1_female 	= Number(elm[0][9].value);
-	var side_tent_2_male	= Number(elm[0][10].value);
-	var side_tent_2_female	= Number(elm[0][11].value);
-	var main_tent_2		= Number(elm[0][12].value);
-	var main_tent_3		= Number(elm[0][13].value);
+	var side_tent_1_male	= Number(elm[0][9].value);
+	var side_tent_1_female 	= Number(elm[0][10].value);
+	var side_tent_2_male	= Number(elm[0][11].value);
+	var side_tent_2_female	= Number(elm[0][12].value);
+	var main_tent_2		= Number(elm[0][13].value);
+	var main_tent_3		= Number(elm[0][14].value);
 
 	if(place1 == 0 || place2 == 0){alert('移動元or移動先が未選択です。');return;}
 	var d;
