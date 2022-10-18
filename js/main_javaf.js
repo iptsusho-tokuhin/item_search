@@ -589,8 +589,8 @@ function move_bunch_change()			//移動する束数に合わせてパネル数�
 {
 	re_set_num(0,3);
 	re_set_num(0,4);
-	var st = Number(elm[0][3].value) * 4 + Number(elm[0][3].value) * 4;
-	var sp = Number(elm[0][3].value) * 4 + Number(elm[0][3].value) * 5;
+	var st = Number(elm[0][3].value) * 4 + Number(elm[0][4].value) * 4;
+	var sp = Number(elm[0][3].value) * 4 + Number(elm[0][4].value) * 5;
 	elm[0][5].value = st;
 	elm[0][6].value = sp;
 	elm[0][7].value = st;
