@@ -406,7 +406,8 @@ function up_down(m,n,add)			//馬房数などのアップダウン
 	elm[m][n].value = num + add;
 	re_set_num(m,n);
 	if(m == 4 && n == 2){includ_stable_change();}
-	if(m == 0 && n <= 5){move_stable_change();}
+	if(m == 0 && n == 5){move_stable_change();}
+	if(m == 0 && n == 3 || n == 4){move_bunch_change();}
 }
 
 function set_select()				//select（顧客）を再設定
@@ -581,6 +582,20 @@ function move_stable_change()			//移動する馬房数に合わせてパネル�
 	elm[0][7].value = st;
 	elm[0][8].value = st;
 	for(var i = 6; i <= 8; i++){re_set_num(0,i);}
+}
+
+
+function move_bunch_change()			//移動する束数に合わせてパネル数を自動計算（20馬房1棟計算）
+{
+	re_set_num(0,3);
+	re_set_num(0,4);
+	var st = Number(elm[0][3].value) * 4 + Number(elm[0][3].value) * 4;
+	var sp = Number(elm[0][3].value) * 4 + Number(elm[0][3].value) * 5;
+	elm[0][5].value = st;
+	elm[0][6].value = sp;
+	elm[0][7].value = st;
+	elm[0][8].value = st;
+	for(var i = 5; i <= 8; i++){re_set_num(0,i);}
 }
 
 function includ_stable_change()			//移動する馬房数に合わせてパネル数を自動計算（20馬房1棟計算）
