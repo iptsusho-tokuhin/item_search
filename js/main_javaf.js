@@ -574,7 +574,7 @@ function re_set_num(m,n)
 
 function move_stable_change()			//移動する馬房数に合わせてパネル数を自動計算（20馬房1棟計算）
 {
-	re_set_num(0,3);
+	re_set_num(0,5);
 	var st = Number(elm[0][5].value);
 	var sp = st + Math.ceil(st / 20) * 2 ;
 	elm[0][6].value = sp;
