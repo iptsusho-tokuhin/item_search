@@ -1,38 +1,3 @@
-function Output_to_gas()
-{
-	document.getElementById('startes').innerHTML = "保存中";
-	var text = '';
-	
-	for(var i = 0; i < data.length; i++)
-	{
-		for(var j = 0; j < data[i].length; j++)
-		{
-				text += data[i][j] + ',';
-		}
-		text += '\n';
-	}
-	
-	text += '***';//データ区切り
-
-	for(var i = 0; i < note.length; i++)
-	{
-		text += note[i] + ',' + '\n';
-	}
-	
-	text += '***';//データ区切り
-	
-	for(var i = 0; i < his.length; i++)
-	{
-		text += his[i] + ',' + '\n';
-	}
-	
-	text += '***';//データ区切り
-	
-	text += document.getElementById('forum').value.replace(/\r?\n/g, '<br>') + ',' + '\n';
-	
-	google.script.run.withSuccessHandler(showStartes).write_ss(text);
-}
-
 function showStartes(returnString)
 {
 	//alert(returnString);
@@ -52,32 +17,19 @@ function output_to_html(text)
 	var arr1 = text.split('***');
 	var arr2 = [];
 	var arr3 = [];
+
+	var arr1[] = text[i].split('\n');
+	arr1[].pop();//各最後の行はごみデータになるので削除
+
+	var arr2 = [];
 	for(var i = 0; i < arr1.length; i++)
 	{
-		arr2[i] = arr1[i].split('\n');
+		arr2[i] = [];
+		arr2[i] = arr1[i].split(',');
 		arr2[i].pop();//各最後の行はごみデータになるので削除
 	}
 	
-	for(var i = 0; i < arr2.length; i++)
-	{
-		arr3[i] = [];
-		for(var j = 0; j < arr2[i].length; j++)
-		{
-			arr3[i][j] = arr2[i][j].split(',');
-			arr3[i][j].pop();//各最後の行はごみデータになるので削除
-		}
-	}
-	
-	data = arr3[0];
-	for(var i = 0; i < arr3[1].length; i++){note[i] = arr3[1][i][0];}
-	for(var i = 0; i < arr3[2].length; i++){his[i] = arr3[2][i][0];}
-	forum = arr3[3][0][0].replace(/<br>/g, "\n");
-	
+	data = arr2[0];
 	set_data();
-	export_table();
-	main.scrollLeft = 3000;
-	road_history();
-	set_select();
-	document.getElementById('forum').value = forum;
 	document.getElementById('startes').innerHTML = "読込完了";
 }
