@@ -25,6 +25,6 @@ function output_to_html(text)
 		//arr2[i].pop();//各最後の行はごみデータになるので削除
 	}
 	
-	data = arr2[];
+	data = arr2;
 	document.getElementById('startes').innerHTML = "読込完了";
 }
