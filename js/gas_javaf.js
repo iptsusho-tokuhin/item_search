@@ -13,6 +13,7 @@ function Input_from_gas()
 
 function output_to_html(text)
 {
+	text = replaceKanaHalfToFull(text);//半角カナを全角カナに変換
 	var arr1 = text.split('\n');
 	var arr2 = [];
 
@@ -21,7 +22,6 @@ function output_to_html(text)
 	for(var i = 0; i < arr1.length; i++)
 	{
 		arr2[i] = arr1[i].split(',');
-		arr2[i][1] = replaceKanaHalfToFull(arr2[i][1]);//半角カナを全角カナに変換
 		arr2[i].pop();//各最後の行はごみデータになるので削除
 	}
 	
