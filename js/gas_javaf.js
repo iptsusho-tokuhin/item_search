@@ -52,7 +52,7 @@ function Hankana2Zenkana(str) {
 		"。": "｡", "、": "､", "ー": "ｰ", "「": "｢", "」": "｣", "・": "･"
   };
   const regExp = new RegExp(`(${Object.keys(kanaMap).join("|")})`, "g");
-  return src
+  return str
     .replace(regExp, function(match) {
       return kanaMap[match];
     })
