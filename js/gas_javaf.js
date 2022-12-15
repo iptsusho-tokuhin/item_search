@@ -21,7 +21,6 @@ function output_to_html(text)
 
 	for(var i = 0; i < arr1.length; i++)
 	{
-		arr2[i] = [];
 		arr2[i] = arr1[i].split(',');
 		//arr2[i].pop();//各最後の行はごみデータになるので削除
 	}
