@@ -14,12 +14,11 @@ function Intput_from_gas()
 function output_to_html(text)
 {
 	//動作試験
-	var arr1 = [] = text.split('\n');;
+	var arr1 = text.split('\n');
 	var arr2 = [];
 
 	arr1[].pop();//各最後の行はごみデータになるので削除
 
-	var arr2 = [];
 	for(var i = 0; i < arr1.length; i++)
 	{
 		arr2[i] = [];
