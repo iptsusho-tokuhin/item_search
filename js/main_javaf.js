@@ -23,7 +23,7 @@ function search(e)
 		var row = table.insertRow(-1);
 		for(var j = 0; j < results[i].length; j++)
 		{
-			var obj = '<td nowrap>' + results[i][j] + '</td>';
+			var obj = '<td font-size: 150%; nowrap>' + results[i][j] + '</td>';
 			row.insertAdjacentHTML('beforeend',obj);
 		}
 	}
