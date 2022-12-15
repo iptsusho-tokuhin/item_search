@@ -2,7 +2,7 @@ var data = [];
 
 var table = document.getElementById('table');
 Input_from_gas();
-
+var judge = [];
 function search(e)
 {
 	var keyword = e.value;
@@ -10,7 +10,7 @@ function search(e)
 	var results = [];
 	results[0] = data[0];
 	
-	var judge = [];
+	
 	for(var i = 1; i < data.length; i++)
 	{
 		judge[1] = String(data[i][1]).indexOf(keyword)
