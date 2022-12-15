@@ -6,6 +6,7 @@ Input_from_gas();
 function search(e)
 {
 	var keyword = e.value;
+	alert(keyword);
 	var results = [];
 	results[0] = data[0];
 	
