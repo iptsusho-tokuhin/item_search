@@ -17,13 +17,13 @@ function output_to_html(text)
 	var arr1 = text.split('\n');
 	var arr2 = [];
 
-	arr1[].pop();//各最後の行はごみデータになるので削除
+	//arr1[].pop();//各最後の行はごみデータになるので削除
 
 	for(var i = 0; i < arr1.length; i++)
 	{
 		arr2[i] = [];
 		arr2[i] = arr1[i].split(',');
-		arr2[i].pop();//各最後の行はごみデータになるので削除
+		//arr2[i].pop();//各最後の行はごみデータになるので削除
 	}
 	
 	data = arr2[0];
