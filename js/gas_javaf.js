@@ -18,7 +18,7 @@ function output_to_html(text)
 	var arr2 = [];
 	var arr3 = [];
 
-	var arr1[] = text[i].split('\n');
+	var arr1[] = text.split('\n');
 	arr1[].pop();//各最後の行はごみデータになるので削除
 
 	var arr2 = [];
