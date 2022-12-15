@@ -22,7 +22,7 @@ function output_to_html(text)
 	data = arr2;
 	document.getElementById('startes').innerHTML = "読込完了";
 	document.getElementById('search_word').disabled = false;
-	document.getElementById('search_word').focus();
+	document.getElementById('search_word').click();
 }
 
 function replaceKanaHalfToFull(str){
