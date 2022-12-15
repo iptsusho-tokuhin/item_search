@@ -15,6 +15,7 @@ function search(e)
 	{
 		judge[1] = String(data[i][1]).indexOf(keyword)
 		judge[2] = String(data[i][2]).indexOf(keyword)
+		alert(String(judge[1]) + String(judge[2]));
 		if(judge[1] !== -1 || judge[2] !== -1){results.push(data[i]);}
 	}
 	
