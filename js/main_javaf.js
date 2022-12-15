@@ -1,7 +1,7 @@
 var data = [];
 
 var table = document.getElementById('table');
-Intput_from_gas();
+Input_from_gas();
 
 function search(e)
 {
