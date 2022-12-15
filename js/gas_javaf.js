@@ -1,13 +1,7 @@
-function showStartes(returnString)
-{
-	//alert(returnString);
-	//Intput_from_gas();//動作お試し
-	document.getElementById('startes').innerHTML = returnString;
-}
-
 function Input_from_gas()
 {
 	document.getElementById('startes').innerHTML = "読込中";
+	document.getElementById('search_word').disabled = true;
 	google.script.run.withSuccessHandler(output_to_html).read_ss();
 }
 
@@ -27,6 +21,7 @@ function output_to_html(text)
 	
 	data = arr2;
 	document.getElementById('startes').innerHTML = "読込完了";
+	document.getElementById('search_word').disabled = false;
 }
 
 function replaceKanaHalfToFull(str){
