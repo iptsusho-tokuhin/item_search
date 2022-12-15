@@ -27,6 +27,5 @@ function output_to_html(text)
 	}
 	
 	data = arr2[0];
-	set_data();
 	document.getElementById('startes').innerHTML = "読込完了";
 }
