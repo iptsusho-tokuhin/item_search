@@ -11,13 +11,7 @@ function photo_close()
   bg.style.height = '0px';
 }
 
-function photo_open(input)
-{
-  bg.style.width = window.innerWidth + 'px';
-  bg.style.height = window.innerHeight + 'px';
-}
-
-function photo_open(input)
+function photo_open(num)
 {
   bg.style.width = window.innerWidth + 'px';
   bg.style.height = window.innerHeight + 'px';
