@@ -25,7 +25,13 @@ function search(e)
 		for(var j = 0; j < results[i].length; j++)
 		{
 			var buf = "";
-			if(i > 0 && j == 0){buf = 'onclick=photo_open(' + results[i][j] + ');';}
+			var text = results[i][j];
+			<a href="javascript:void(0);">リンク文字列</a>
+			if(i > 0 && j == 0)
+			{
+				buf = 'onclick=photo_open(' + results[i][j] + ');';
+				text = '<a href="javascript:void(0);">' + results[i][j] + </a>;
+			}
 			var obj = '<td font-size: 150%; ' + buf + 'nowrap>' + results[i][j] + '</td>';
 			row.insertAdjacentHTML('beforeend',obj);
 		}
