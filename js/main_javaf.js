@@ -23,7 +23,8 @@ function search(e)
 	{
 		for(var j = 0; j < results[i].length; j++)
 		{
-			var obj = '<td font-size: 150%; nowrap>' + results[i][j] + '</td>';
+			if(i > 0 && j == 0){var buf = 'onclick=photo_open(' + results[i][j] + ')'}
+			var obj = '<td font-size: 150%; ' + buf + 'nowrap>' + results[i][j] + '</td>';
 			row.insertAdjacentHTML('beforeend',obj);
 		}
 	}
