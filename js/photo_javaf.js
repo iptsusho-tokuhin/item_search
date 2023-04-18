@@ -1,7 +1,7 @@
 var bg = document.getElementById('bg');
 var img = document.getElementById('img');
 
-bg.style.backgroundColor = 'rgba(0,0,0,0.8)';
+bg.style.backgroundColor = 'rgba(0,0,0,0.7)';
 bg.style.position = 'fixed';
 bg.style.top = '0px';
 bg.style.left = '0px';
