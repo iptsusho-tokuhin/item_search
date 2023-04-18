@@ -7,6 +7,7 @@ function Input_from_gas()
 
 function output_to_html(DataJSON)
 {
+	alert(DataJSON);
 	//DataJSON = replaceKanaHalfToFull(DataJSON);//半角カナを全角カナに変換
 	data = JSON.parse(DataJSON);
 	
