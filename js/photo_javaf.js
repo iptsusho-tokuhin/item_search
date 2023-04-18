@@ -1,6 +1,6 @@
 var bg = document.getElementsByClassName('bg');
 
-bg.style.backgroundColor = "rgba(255,255,255,0.5)";
+bg.style.backgroundColor = rgba(255,255,255,0.5);
 bg.style.position = 'fixed';
 bg.style.top = '0px';
 bg.style.left = '0px';
