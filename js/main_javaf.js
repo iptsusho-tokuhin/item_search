@@ -21,9 +21,9 @@ function search(e)
 	table.innerHTML = '';
 	for(var i = 0; i < results.length; i++)	//データ出力
 	{
+		var row = table.insertRow(-1);
 		for(var j = 0; j < results[i].length; j++)
 		{
-			var row = table.insertRow(-1);
 			var buf = "";
 			if(i > 0 && j == 0){buf = 'onclick=photo_open(' + results[i][j] + ');';}
 			var obj = '<td font-size: 150%; ' + buf + 'nowrap>' + results[i][j] + '</td>';
