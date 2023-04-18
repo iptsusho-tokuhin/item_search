@@ -7,8 +7,8 @@ function Input_from_gas()
 
 function output_to_html(DataJSON)
 {
-	//DataJSON = replaceKanaHalfToFull(DataJSON);//半角カナを全角カナに変換
-	//data = JSON.parse(DataJSON);
+	DataJSON = replaceKanaHalfToFull(DataJSON);//半角カナを全角カナに変換
+	data = JSON.parse(DataJSON);
 	
 	document.getElementById('startes').innerHTML = "読込完了";
 	document.getElementById('search_word').disabled = false;
