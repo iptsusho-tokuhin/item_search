@@ -28,7 +28,7 @@ function search(e)
 			var text = results[i][j];
 			if(i > 0 && j == 0)
 			{
-				buf = 'onclick=photo_open(' + results[i][j] + ');';
+				buf = 'onclick=photo_open(String(' + results[i][j] + '));';
 				text = '<a href="javascript:void(0);">' + results[i][j] + '</a>';
 			}
 			var obj = '<td font-size: 150%; nowrap ' + buf + '>' + text + '</td>';
