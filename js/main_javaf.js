@@ -1,4 +1,5 @@
 var data;
+var f_list;
 
 var table = document.getElementById('table');
 Input_from_gas();
