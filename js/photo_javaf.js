@@ -6,8 +6,8 @@ bg.style.top = '0px';
 bg.style.left = '0px';
 function photo_close()
 {
-  bg.clientWidth = '0px';
-  bg.clientHeight = '0px';
+  bg.style.width = '0px';
+  bg.style.height = '0px';
 }
 
 function photo_open()
