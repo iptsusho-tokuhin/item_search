@@ -26,7 +26,6 @@ function search(e)
 		{
 			var buf = "";
 			var text = results[i][j];
-			<a href="javascript:void(0);">リンク文字列</a>
 			if(i > 0 && j == 0)
 			{
 				buf = 'onclick=photo_open(' + results[i][j] + ');';
