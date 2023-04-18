@@ -25,9 +25,9 @@ function photo_open(num)
 
 function get_id(num)
 {
-  for(var i = 0; i < list.length; i++)	//データ出力
+  for(var i = 0; i < f_lis.length; i++)
 	{
-    if(!list[0].indexOf(num)){return i;}// 前方一致のときの処理
+    if(!f_lis[0].indexOf(num)){return i;}// 前方一致のときの処理
   }
   return false;
 }
