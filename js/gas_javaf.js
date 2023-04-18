@@ -9,7 +9,8 @@ function output_to_html(DataJSON)
 {
 	alert(DataJSON);
 	//DataJSON = replaceKanaHalfToFull(DataJSON);//半角カナを全角カナに変換
-	data = JSON.parse(DataJSON);
+	var input = JSON.parse(DataJSON);
+	data = input[0];
 	
 	document.getElementById('startes').innerHTML = "読込完了";
 	document.getElementById('search_word').disabled = false;
