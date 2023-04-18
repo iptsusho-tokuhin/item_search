@@ -5,21 +5,12 @@ function Input_from_gas()
 	google.script.run.withSuccessHandler(output_to_html).read_ss();
 }
 
-function output_to_html(text)
+function output_to_html(DataJSON)
 {
-	text = replaceKanaHalfToFull(text);//半角カナを全角カナに変換
-	var arr1 = text.split('\n');
-	var arr2 = [];
-
-	//arr1[].pop();//各最後の行はごみデータになるので削除
-
-	for(var i = 0; i < arr1.length; i++)
-	{
-		arr2[i] = arr1[i].split(',');
-		arr2[i].pop();//各最後の行はごみデータになるので削除
-	}
+	DataJSON = replaceKanaHalfToFull(DataJSON);//半角カナを全角カナに変換
+	var data = JSON.parse(DataJSON);
 	
-	data = arr2;
+	data = input[0];
 	document.getElementById('startes').innerHTML = "読込完了";
 	document.getElementById('search_word').disabled = false;
 	document.getElementById('search_word').focus();
