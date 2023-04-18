@@ -1,4 +1,4 @@
-var data = [];
+var data;
 
 var table = document.getElementById('table');
 Input_from_gas();
