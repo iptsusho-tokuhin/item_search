@@ -17,10 +17,10 @@ function photo_open(num)
   bg.style.height = window.innerHeight + 'px';
   
   var id = get_id(num);
-  if(id)
-  {
+  //if(id)
+  //{
     img.src = 'https://drive.google.com/uc?id=' + id;
-  }
+  //}
 }
 
 function get_id(num)
