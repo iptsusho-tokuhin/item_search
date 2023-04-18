@@ -12,7 +12,7 @@ function photo_close()
 
 function photo_open()
 {
-  bg.clientWidth = window.innerWidth + 'px';
-  bg.clientHeight = window.innerHeight + 'px';
+  bg.clientWidth = '100px'//window.innerWidth + 'px';
+  bg.clientHeight = '100px'//window.innerHeight + 'px';
 }
 
