@@ -17,6 +17,7 @@ function output_to_html(DataJSON)
 	document.getElementById('search_word').focus();
 }
 
+
 function replaceKanaHalfToFull(str){
   var kanaMap = {
     'ｶﾞ': 'ガ', 'ｷﾞ': 'ギ', 'ｸﾞ': 'グ', 'ｹﾞ': 'ゲ', 'ｺﾞ': 'ゴ',
