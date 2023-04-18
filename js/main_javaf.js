@@ -31,7 +31,7 @@ function search(e)
 				buf = 'onclick=photo_open(' + results[i][j] + ');';
 				text = '<a href="javascript:void(0);">' + results[i][j] + '</a>';
 			}
-			var obj = '<td font-size: 150%; ' + buf + 'nowrap>' + text + '</td>';
+			var obj = '<td font-size: 150%; nowrap ' + buf + '>' + text + '</td>';
 			row.insertAdjacentHTML('beforeend',obj);
 		}
 	}
