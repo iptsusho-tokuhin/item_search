@@ -45,3 +45,15 @@ function replaceKanaHalfToFull(str){
     return kanaMap[s];
   }).replace(/ﾞ/g, '゛').replace(/ﾟ/g, '゜');
 }
+
+function input_to_img(id)
+{
+	(function() {
+      const fileId = '1_XVGkiQUy0SPglj0EX8lRQono2uPdEqm';
+      const url = google.script.run.withSuccessHandler(base64Data => {
+	      img.setAttribute("src", "data:image/png;base64," + base64Data);
+      })
+      .withFailureHandler(console.error)
+      .getBae64Image(fileId);      
+    })();
+}
