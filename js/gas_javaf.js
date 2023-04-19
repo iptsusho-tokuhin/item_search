@@ -48,8 +48,8 @@ function replaceKanaHalfToFull(str){
 
 function input_to_img(id)
 {
-	if(!id)
-	{
+	//if(!id)
+	//{
 		(function() {
 		const url = google.script.run.withSuccessHandler(base64Data => {
 			img.setAttribute("src", "data:image/png;base64," + base64Data);
@@ -57,7 +57,7 @@ function input_to_img(id)
       	.withFailureHandler(console.error)
       	.getBae64Image(id);
 		})(); 
-	}
+	//}
 
 	
 	//(function() {
