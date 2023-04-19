@@ -17,7 +17,8 @@ function photo_open(num)
 {
   bg.style.width = window.innerWidth + 'px';
   bg.style.height = window.innerHeight + 'px';
-  img.style.height = window.innerWidth * 0.6 + 'px';
+  var h = window.innerWidth * 0.6
+  img.style.height = h + 'px';
   input_to_img(get_id(num));
 }
 
