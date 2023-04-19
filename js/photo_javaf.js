@@ -9,13 +9,15 @@ function photo_close()
 {
   bg.style.width = '0px';
   bg.style.height = '0px';
+  img.style.width = '0px';
+  img.style.height = '0px';
+  img.src = "";
 }
 
 function photo_open(num)
 {
   bg.style.width = window.innerWidth + 'px';
   bg.style.height = window.innerHeight + 'px';
-  
   input_to_img(get_id(num));
 }
 
