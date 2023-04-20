@@ -51,7 +51,7 @@ function take_picture(elm)
  
   // 読み込み完了時の処理を追加
   fileReader.onload = function() {
-    img.setAttribute("src", e.target.result);
+    img.setAttribute("src", elm.result);
   };
   fileReader.readAsDataURL(fileList[0]); // ファイルの読み込み
 }
