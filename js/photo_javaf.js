@@ -31,3 +31,11 @@ function get_id(num)
   return '1jKJA2AOkWwD08r8mjBRPUI6c8EeAzNXR';//noimage
 }
 
+function take_picture(e)
+{
+  var reader = new FileReader();
+  reader.onload = function (e) {
+    img.setAttribute("src", e.target.result);
+  }
+  reader.readAsDataURL(e.target.files[0]);
+}
