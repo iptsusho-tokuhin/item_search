@@ -32,20 +32,9 @@ function get_id(num)
   return '1jKJA2AOkWwD08r8mjBRPUI6c8EeAzNXR';//noimage
 }
 
-//function take_picture(e)
-//{
-//  var reader = new FileReader();
-//  reader.onload = function (e) {
-//    img.setAttribute("src", e.target.result);
- // }
-//  reader.readAsDataURL(e.target.files[0]);
-//}
-
-
 function take_picture(elm)
 {
   var fileList = elm.files;// ファイルリストを取得
-  var fileCount = fileList.length;// ファイルの数を取得
   var fileReader = new FileReader();// FileReaderを生成
   var file = fileList[0];// ファイルを取得
  
