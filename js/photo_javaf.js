@@ -1,5 +1,6 @@
 var viewer = document.getElementById('viewer');
 var img = document.getElementById('img');
+var upload = document.getElementById('upload');
 
 viewer.style.backgroundColor = 'rgba(0,0,0,0.7)';
 viewer.style.position = 'fixed';
@@ -31,11 +32,26 @@ function get_id(num)
   return '1jKJA2AOkWwD08r8mjBRPUI6c8EeAzNXR';//noimage
 }
 
-function take_picture(e)
+//function take_picture(e)
+//{
+//  var reader = new FileReader();
+//  reader.onload = function (e) {
+//    img.setAttribute("src", e.target.result);
+ // }
+//  reader.readAsDataURL(e.target.files[0]);
+//}
+
+
+function take_picture(elm)
 {
-  var reader = new FileReader();
-  reader.onload = function (e) {
+  var fileList = elm.files;// ファイルリストを取得
+  var fileCount = fileList.length;// ファイルの数を取得
+  var fileReader = new FileReader();// FileReaderを生成
+  var file = fileList[0];// ファイルを取得
+ 
+  // 読み込み完了時の処理を追加
+  fileReader.onload = function() {
     img.setAttribute("src", e.target.result);
-  }
-  reader.readAsDataURL(e.target.files[0]);
+  };
+  fileReader.readAsDataURL(fileList[0]); // ファイルの読み込み
 }
