@@ -2,6 +2,8 @@ var viewer = document.getElementById('viewer');
 var img = document.getElementById('img');
 var upload = document.getElementById('upload');
 
+var fileList;
+
 viewer.style.backgroundColor = 'rgba(0,0,0,0.7)';
 viewer.style.position = 'fixed';
 viewer.style.top = '0px';
@@ -15,6 +17,7 @@ function photo_close()//画像ビュワーを閉じる
 {
   viewer.style.display = "none";
   img.src = "";
+  fileList = "";
 }
 
 function photo_open(num)//画像ビュワーを表示
@@ -34,7 +37,7 @@ function get_id(num)
 
 function take_picture(elm)
 {
-  var fileList = elm.files;// ファイルリストを取得
+  fileList = elm.files;// ファイルリストを取得
   var fileReader = new FileReader();// FileReaderを生成
   var file = fileList[0];// ファイルを取得
  
