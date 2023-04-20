@@ -4,20 +4,20 @@ var upload = document.getElementById('upload');
 
 viewer.style.backgroundColor = 'rgba(0,0,0,0.7)';
 viewer.style.position = 'fixed';
-viewer.style.display = "none";
 viewer.style.top = '0px';
 viewer.style.left = '0px';
 viewer.style.width = window.innerWidth + 'px';
 viewer.style.height = window.innerHeight + 'px';
 var h = window.innerHeight * 0.6;
 img.style.height = h + 'px';
-function photo_close()
+
+function photo_close()//画像ビュワーを閉じる
 {
   viewer.style.display = "none";
   img.src = "";
 }
 
-function photo_open(num)
+function photo_open(num)//画像ビュワーを表示
 {
   viewer.style.display ="block";
   input_to_img(get_id(num));
