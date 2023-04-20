@@ -26,7 +26,7 @@ function photo_open(num)//画像ビュワーを表示
   input_to_img(get_id(num));
 }
 
-function get_id(num)
+function get_id(num)//GASより取得したファイルリストのファイル名よりIDを得る
 {
   for(var i = 0; i < f_list.length; i++)
   {
@@ -35,7 +35,7 @@ function get_id(num)
   return '1jKJA2AOkWwD08r8mjBRPUI6c8EeAzNXR';//noimage
 }
 
-function take_picture(elm)
+function take_picture(elm)//inputの中身が変更されたらビュワーを更新する
 {
   fileList = elm.files;// ファイルリストを取得
   var fileReader = new FileReader();// FileReaderを生成
