@@ -47,5 +47,5 @@ function take_picture(elm)//inputの中身が変更されたらビュワーを�
     img.setAttribute("src", this.result);
   };
   fileReader.readAsDataURL(fileList[0]); // ファイルの読み込み
-  upload.style.display = "block";
+  upload.style.display = "inline-block";
 }
