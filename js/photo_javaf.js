@@ -10,19 +10,20 @@ viewer.style.top = '0px';
 viewer.style.left = '0px';
 viewer.style.width = window.innerWidth + 'px';
 viewer.style.height = window.innerHeight + 'px';
-var h = window.innerHeight * 0.6;
+var h = window.innerHeight * 0.7;
 img.style.height = h + 'px';
 
 function photo_close()//画像ビュワーを閉じる
 {
   viewer.style.display = "none";
+  upload.style.display = "none";
   img.src = "";
   fileList = "";
 }
 
 function photo_open(num)//画像ビュワーを表示
 {
-  viewer.style.display ="block";
+  viewer.style.display = "block";
   input_to_img(get_id(num));
 }
 
@@ -44,6 +45,7 @@ function take_picture(elm)//inputの中身が変更されたらビュワーを�
   // 読み込み完了時の処理を追加
   fileReader.onload = function() {
     img.setAttribute("src", this.result);
+    upload.style.display = "block";
   };
   fileReader.readAsDataURL(fileList[0]); // ファイルの読み込み
 }
