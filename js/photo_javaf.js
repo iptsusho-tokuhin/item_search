@@ -17,7 +17,7 @@ function photo_close()//画像ビュワーを閉じる
 {
   viewer.style.display = "none";
   upload.style.display = "none";
-  img.setAttribute("src", this.remove(););
+  img.setAttribute("src", this.remove());
   fileList = "";
 }
 
