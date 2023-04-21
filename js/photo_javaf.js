@@ -17,7 +17,7 @@ function photo_close()//画像ビュワーを閉じる
 {
   viewer.style.display = "none";
   upload.style.display = "none";
-  img.src = "";
+  img.src.remove();
   fileList = "";
 }
 
@@ -45,7 +45,7 @@ function take_picture(elm)//inputの中身が変更されたらビュワーを�
   // 読み込み完了時の処理を追加
   fileReader.onload = function() {
     img.setAttribute("src", this.result);
-    upload.style.display = "block";
   };
   fileReader.readAsDataURL(fileList[0]); // ファイルの読み込み
+  upload.style.display = "block";
 }
