@@ -19,6 +19,8 @@ function photo_close()//画像ビュワーを閉じる
 {
   viewer.style.display = "none";
   upload.style.display = "none";
+	update.style.display = "none";
+	check.style.display = "none";
   img.removeAttribute('src');
   file = "";
 }
