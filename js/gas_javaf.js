@@ -71,8 +71,6 @@ function uploading_file()
 function uploaded_file()
 {
 	google.script.run.withSuccessHandler(reset_file_list).rename_file(old_name,new_name);
-	data = input[0];
-	f_list = input[1];
 	upload.style.display = "none";
 	update.style.display = "none";
 	check.style.display = "inline-block";
