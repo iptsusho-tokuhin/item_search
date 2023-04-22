@@ -48,4 +48,5 @@ function take_picture(elm)//inputの中身が変更されたらビュワーを�
   };
   fileReader.readAsDataURL(fileList[0]); // ファイルの読み込み
   upload.style.display = "inline-block";
+  alert(file.name);
 }
