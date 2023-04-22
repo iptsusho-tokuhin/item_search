@@ -58,6 +58,6 @@ function take_picture(elm)//inputの中身が変更されたらビュワーを�
 	};
 	fileReader.readAsDataURL(file); // ファイルの読み込み
 	upload.style.display = "inline-block";
-	old_name.value = filefile.name;
-	new_name.value = item_num + '.' + filefile.name.split('.').pop();
+	old_name.value = file.name;
+	new_name.value = item_num + '.' + file.name.split('.').pop();
 }
