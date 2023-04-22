@@ -2,7 +2,7 @@ var viewer = document.getElementById('viewer');
 var img = document.getElementById('img');
 var upload = document.getElementById('upload');
 
-var fileList;
+var file;
 
 viewer.style.backgroundColor = 'rgba(0,0,0,0.7)';
 viewer.style.position = 'fixed';
@@ -38,15 +38,15 @@ function get_id(num)//GASより取得したファイルリストのファイル�
 
 function take_picture(elm)//inputの中身が変更されたらビュワーを更新する
 {
-  fileList = elm.files;// ファイルリストを取得
+  var fileList = elm.files;// ファイルリストを取得
   var fileReader = new FileReader();// FileReaderを生成
-  var file = fileList[0];// ファイルを取得
+  file = fileList[0];// ファイルを取得
  
   // 読み込み完了時の処理を追加
   fileReader.onload = function() {
     img.setAttribute("src", this.result);
   };
-  fileReader.readAsDataURL(fileList[0]); // ファイルの読み込み
+  fileReader.readAsDataURL(file); // ファイルの読み込み
   upload.style.display = "inline-block";
   //alert(file.name);
 }
