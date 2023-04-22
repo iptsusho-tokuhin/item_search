@@ -59,14 +59,14 @@ function input_to_img(id)//画像ファイルidを渡し、googledriveから画�
 	})(); 
 }
 
-function uploding_file()
+function uploading_file()
 {
 	upload.style.display = "none";
 	update.style.display = "inline-block";
 	check.style.display = "none";
 }
 
-function uploded_file()
+function uploaded_file()
 {
 	upload.style.display = "none";
 	update.style.display = "none";
