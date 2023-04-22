@@ -59,15 +59,29 @@ function input_to_img(id)//画像ファイルidを渡し、googledriveから画�
 	})(); 
 }
 
+function uploding_file()
+{
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function delete_file(id)//ファイルidを渡しgoogledriveのファイルを削除（ゴミ箱に移動）
 {
 	google.script.run.delete_file(id);
-}
-
-function upload_file()//googledriveにファイルを保存
-{
-	//google.script.run.withSuccessHandler(update_id).upload_file(file);
-	google.script.run.upload_file(file);
 }
 
 function update_id(DataJSON)
