@@ -1,6 +1,6 @@
 var viewer = document.getElementById('viewer');
 var img = document.getElementById('img');
-var upload = document.getElementById('upload');
+var upload_ico = document.getElementById('upload_ico');
 
 var file = "";
 
@@ -16,7 +16,7 @@ img.style.height = h + 'px';
 function photo_close()//画像ビュワーを閉じる
 {
   viewer.style.display = "none";
-  upload.style.display = "none";
+  upload_ico.style.display = "none";
   img.removeAttribute('src');
   file = "";
 }
@@ -47,6 +47,6 @@ function take_picture(elm)//inputの中身が変更されたらビュワーを�
     img.setAttribute("src", this.result);
   };
   fileReader.readAsDataURL(file); // ファイルの読み込み
-  upload.style.display = "inline-block";
+  upload_ico.style.display = "inline-block";
   //alert(file.name);
 }
