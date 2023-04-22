@@ -61,6 +61,8 @@ function input_to_img(id)//画像ファイルidを渡し、googledriveから画�
 
 function uploading_file()
 {
+	var id = get_id(num);
+	if(id != '1jKJA2AOkWwD08r8mjBRPUI6c8EeAzNXR'){google.script.run.delete_file(id);}//既存画像の削除
 	upload.style.display = "none";
 	update.style.display = "inline-block";
 	check.style.display = "none";
@@ -84,12 +86,6 @@ function uploaded_file()
 
 
 
-
-
-function delete_file(id)//ファイルidを渡しgoogledriveのファイルを削除（ゴミ箱に移動）
-{
-	google.script.run.delete_file(id);
-}
 
 function update_id(DataJSON)
 {
