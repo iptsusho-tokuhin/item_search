@@ -61,10 +61,17 @@ function input_to_img(id)//画像ファイルidを渡し、googledriveから画�
 
 function uploding_file()
 {
-	
+	upload.style.display = "none";
+	update.style.display = "inline-block";
+	check.style.display = "none";
 }
 
-
+function uploded_file()
+{
+	upload.style.display = "none";
+	update.style.display = "none";
+	check.style.display = "inline-block";
+}
 
 
 
