@@ -58,3 +58,19 @@ function input_to_img(id)//画像ファイルidを渡し、googledriveから画�
       	.getBae64Image(id);
 	})(); 
 }
+
+function delete_file(id)//ファイルidを渡しgoogledriveのファイルを削除（ゴミ箱に移動）
+{
+	google.script.run.delete_file(id);
+}
+
+function upload_file(file,name)//ファイル、ファイル名を渡しgoogledriveにファイルを保存
+{
+	google.script.run.withSuccessHandler(update_id).upload_file(file,name);
+}
+
+function update_id(DataJSON)
+{
+	var input = JSON.parse(DataJSON);
+	f_list = JSON.parse(DataJSON);
+}
