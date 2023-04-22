@@ -1,11 +1,11 @@
-function Input_from_gas()
+function Input_from_gas()//必要なデータをgoogledriveから読み込み　1
 {
 	document.getElementById('startes').innerHTML = "読込中";
 	document.getElementById('search_word').disabled = true;
 	google.script.run.withSuccessHandler(output_to_html).read_ss();
 }
 
-function output_to_html(DataJSON)
+function output_to_html(DataJSON)//必要なデータをgoogledriveから読み込み　２
 {
 	DataJSON = replaceKanaHalfToFull(DataJSON);//半角カナを全角カナに変換
 	var input = JSON.parse(DataJSON);
@@ -18,7 +18,8 @@ function output_to_html(DataJSON)
 }
 
 
-function replaceKanaHalfToFull(str){
+function replaceKanaHalfToFull(str)//全角半角をあるていど統一
+{
   var kanaMap = {
     '０': '0', '１': '1', '２': '2', '３': '3', '４': '4', '５': '5', '６': '6', '７': '7', '８': '8', '９': '9',
     'ｶﾞ': 'ガ', 'ｷﾞ': 'ギ', 'ｸﾞ': 'グ', 'ｹﾞ': 'ゲ', 'ｺﾞ': 'ゴ',
@@ -47,7 +48,7 @@ function replaceKanaHalfToFull(str){
   }).replace(/ﾞ/g, '゛').replace(/ﾟ/g, '゜');
 }
 
-function input_to_img(id)
+function input_to_img(id)//画像ファイルidを渡し、googledriveから画像を読み込みimgに表示する
 {
 	(function() {
 	const url = google.script.run.withSuccessHandler(base64Data => {
