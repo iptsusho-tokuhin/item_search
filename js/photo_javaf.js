@@ -2,7 +2,7 @@ var viewer = document.getElementById('viewer');
 var img = document.getElementById('img');
 var upload = document.getElementById('upload');
 
-var file;
+var file = "";
 
 viewer.style.backgroundColor = 'rgba(0,0,0,0.7)';
 viewer.style.position = 'fixed';
@@ -18,7 +18,7 @@ function photo_close()//画像ビュワーを閉じる
   viewer.style.display = "none";
   upload.style.display = "none";
   img.removeAttribute('src');
-  fileList = "";
+  file = "";
 }
 
 function photo_open(num)//画像ビュワーを表示
