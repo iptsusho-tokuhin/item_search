@@ -61,7 +61,7 @@ function input_to_img(id)//画像ファイルidを渡し、googledriveから画�
 
 function uploading_file()
 {
-	var id = get_id(num);
+	var id = get_id(item_num);
 	if(id != '1jKJA2AOkWwD08r8mjBRPUI6c8EeAzNXR'){google.script.run.delete_file(id);}//既存画像の削除
 	upload.style.display = "none";
 	update.style.display = "inline-block";
