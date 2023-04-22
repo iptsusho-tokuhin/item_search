@@ -64,9 +64,10 @@ function delete_file(id)//ファイルidを渡しgoogledriveのファイルを�
 	google.script.run.delete_file(id);
 }
 
-function upload_file(file,name)//ファイル、ファイル名を渡しgoogledriveにファイルを保存
+function upload_file()//googledriveにファイルを保存
 {
-	google.script.run.withSuccessHandler(update_id).upload_file(file,name);
+	//google.script.run.withSuccessHandler(update_id).upload_file(file);
+	google.script.run.upload_file(file);
 }
 
 function update_id(DataJSON)
