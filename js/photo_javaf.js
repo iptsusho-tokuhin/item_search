@@ -1,6 +1,8 @@
 var viewer = document.getElementById('viewer');
 var img = document.getElementById('img');
 var upload = document.getElementById('upload');
+var update = document.getElementById('update');
+var check  = document.getElementById('check');
 
 var file = "";
 
