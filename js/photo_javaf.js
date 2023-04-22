@@ -4,7 +4,11 @@ var upload = document.getElementById('upload');
 var update = document.getElementById('update');
 var check  = document.getElementById('check');
 
+var old_name= document.getElementById('old_name');
+var new_name= document.getElementById('new_name');
+
 var file = "";
+var item_num = "";
 
 viewer.style.backgroundColor = 'rgba(0,0,0,0.7)';
 viewer.style.position = 'fixed';
@@ -17,40 +21,42 @@ img.style.height = h + 'px';
 
 function photo_close()//画像ビュワーを閉じる
 {
-  viewer.style.display = "none";
-  upload.style.display = "none";
+	viewer.style.display = "none";
+	upload.style.display = "none";
 	update.style.display = "none";
 	check.style.display = "none";
-  img.removeAttribute('src');
-  file = "";
+	img.removeAttribute('src');
+	file = "";
+	item_num = "";
 }
 
 function photo_open(num)//画像ビュワーを表示
 {
-  viewer.style.display = "block";
-  input_to_img(get_id(num));
+	viewer.style.display = "block";
+	input_to_img(get_id(num));
+	item_num = num;
 }
 
 function get_id(num)//GASより取得したファイルリストのファイル名よりIDを得る
 {
-  for(var i = 0; i < f_list.length; i++)
-  {
-    if(!f_list[i][0].indexOf(num)){return f_list[i][1];}// 前方一致のときの処理
-  }
-  return '1jKJA2AOkWwD08r8mjBRPUI6c8EeAzNXR';//noimage
+	for(var i = 0; i < f_list.length; i++)
+	{
+		if(!f_list[i][0].indexOf(num)){return f_list[i][1];}// 前方一致のときの処理
+	}
+	return '1jKJA2AOkWwD08r8mjBRPUI6c8EeAzNXR';//noimage
 }
 
 function take_picture(elm)//inputの中身が変更されたらビュワーを更新する
 {
-  var fileList = elm.files;// ファイルリストを取得
-  var fileReader = new FileReader();// FileReaderを生成
-  file = fileList[0];// ファイルを取得
+	var fileList = elm.files;// ファイルリストを取得
+	var fileReader = new FileReader();// FileReaderを生成
+	file = fileList[0];// ファイルを取得
  
-  // 読み込み完了時の処理を追加
-  fileReader.onload = function() {
-    img.setAttribute("src", this.result);
-  };
-  fileReader.readAsDataURL(file); // ファイルの読み込み
-  upload.style.display = "inline-block";
-  //alert(file.name);
+	// 読み込み完了時の処理を追加
+	fileReader.onload = function() {
+		img.setAttribute("src", this.result);
+	};
+	fileReader.readAsDataURL(file); // ファイルの読み込み
+	upload.style.display = "inline-block";
+	old_name.value = filefile.name;
 }
