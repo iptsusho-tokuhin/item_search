@@ -4,11 +4,14 @@ var upload = document.getElementById('upload');
 var update = document.getElementById('update');
 var check  = document.getElementById('check');
 
-var old_name= document.getElementById('old_name');
-var new_name= document.getElementById('new_name');
+//var old_name= document.getElementById('old_name');
+//var new_name= document.getElementById('new_name');
 
 var file = "";
 var item_num = "";
+
+var old_name = "";
+var new_name = "";
 
 viewer.style.backgroundColor = 'rgba(0,0,0,0.7)';
 viewer.style.position = 'fixed';
@@ -28,6 +31,8 @@ function photo_close()//画像ビュワーを閉じる
 	img.removeAttribute('src');
 	file = "";
 	item_num = "";
+	old_name = "";
+	new_name = "";
 }
 
 function photo_open(num)//画像ビュワーを表示
@@ -58,6 +63,6 @@ function take_picture(elm)//inputの中身が変更されたらビュワーを�
 	};
 	fileReader.readAsDataURL(file); // ファイルの読み込み
 	upload.style.display = "inline-block";
-	old_name.value = file.name;
-	new_name.value = item_num + '.' + file.name.split('.').pop();
+	old_name = file.name;
+	new_name = item_num + '.' + file.name.split('.').pop();
 }
