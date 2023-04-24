@@ -46,14 +46,14 @@ function replaceKanaHalfToFull(str)//全角半角をあるていど統一
   }).replace(/ﾞ/g, '゛').replace(/ﾟ/g, '゜');
 }
 
-function input_to_img(id)//画像ファイルidを渡し、googledriveから画像を読み込みimgに表示する
+function dounload_img(num)//アイテムコードを渡し、googledriveからファイル名より画像を読み込みimgに表示する
 {
 	(function() {
 	const url = google.script.run.withSuccessHandler(base64Data => {
 		img.setAttribute("src", "data:image/png;base64," + base64Data);
 	})
       	.withFailureHandler(console.error)
-      	.getBae64Image(id);
+      	.get_image(num);
 	})(); 
 }
 
