@@ -68,13 +68,8 @@ function uploading_file()
 
 function uploaded_file()
 {
-	google.script.run.withSuccessHandler(reset_file_list).rename_file(old_name,new_name);
+	google.script.run.rename_file(old_name,new_name);
 	upload.style.display = "none";
 	update.style.display = "none";
 	check.style.display = "inline-block";
-}
-
-function reset_file_list(DataJSON)
-{
-	f_list = JSON.parse(DataJSON);
 }
