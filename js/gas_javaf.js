@@ -57,18 +57,17 @@ function dounload_img(num)//アイテムコードを渡し、googledriveから�
 	})(); 
 }
 
-function uploading_file()
+function uploading_file()//画像アップロード中に行う処理
 {
-	var id = get_id(item_num);
 	google.script.run.delete_file(item_num);//既存画像の削除
 	upload.style.display = "none";
 	update.style.display = "inline-block";
 	check.style.display = "none";
 }
 
-function uploaded_file()
+function uploaded_file()//画像アップロード終了後に行う処理
 {
-	google.script.run.rename_file(old_name,new_name);
+	google.script.run.rename_file(old_name,new_name);//アップロードした画像を後追いで名前変更
 	upload.style.display = "none";
 	update.style.display = "none";
 	check.style.display = "inline-block";
