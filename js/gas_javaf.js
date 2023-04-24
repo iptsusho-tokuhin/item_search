@@ -8,9 +8,7 @@ function Input_from_gas()//必要なデータをgoogledriveから読み込み　
 function output_to_html(DataJSON)//必要なデータをgoogledriveから読み込み　２
 {
 	DataJSON = replaceKanaHalfToFull(DataJSON);//半角カナを全角カナに変換
-	var input = JSON.parse(DataJSON);
-	data = input[0];
-	f_list = input[1];
+	data =  JSON.parse(DataJSON);
 	
 	document.getElementById('startes').innerHTML = "読込完了";
 	document.getElementById('search_word').disabled = false;
