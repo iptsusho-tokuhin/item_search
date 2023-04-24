@@ -38,7 +38,7 @@ function photo_close()//画像ビュワーを閉じる
 function photo_open(num)//画像ビュワーを表示
 {
 	viewer.style.display = "block";
-	input_to_img(get_id(num));
+	dounload_img(num);
 	item_num = num;
 }
 
