@@ -42,15 +42,6 @@ function photo_open(num)//画像ビュワーを表示
 	item_num = num;
 }
 
-function get_id(num)//GASより取得したファイルリストのファイル名よりIDを得る
-{
-	for(var i = 0; i < f_list.length; i++)
-	{
-		if(!f_list[i][0].indexOf(num)){return f_list[i][1];}// 前方一致のときの処理
-	}
-	return '1jKJA2AOkWwD08r8mjBRPUI6c8EeAzNXR';//noimage
-}
-
 function take_picture(elm)//inputの中身が変更されたらビュワーを更新する
 {
 	var fileList = elm.files;// ファイルリストを取得
