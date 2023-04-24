@@ -60,7 +60,7 @@ function dounload_img(num)//アイテムコードを渡し、googledriveから�
 function uploading_file()
 {
 	var id = get_id(item_num);
-	if(id != '1jKJA2AOkWwD08r8mjBRPUI6c8EeAzNXR'){google.script.run.delete_file(id);}//既存画像の削除
+	google.script.run.delete_file(item_num);//既存画像の削除
 	upload.style.display = "none";
 	update.style.display = "inline-block";
 	check.style.display = "none";
