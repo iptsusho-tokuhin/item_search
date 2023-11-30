@@ -35,8 +35,6 @@ function search(e)
 			row.insertAdjacentHTML('beforeend',obj);
 		}
 	}
-	table.rows[0].cells[0].style.position = 'sticky';//1列目を固定
-	table.rows[1].cells[0].style.position = 'sticky';//1列目を固定
-	table.rows[2].cells[0].style.position = 'sticky';//1列目を固定
+
 }
 
